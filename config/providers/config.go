@@ -1,8 +1,8 @@
-package applications
+package providers
 
 import "github.com/crossplane/upjet/pkg/config"
 
-const ShortGroup = "applications"
+const ShortGroup = "providers"
 
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
