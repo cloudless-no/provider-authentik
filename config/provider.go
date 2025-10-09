@@ -14,16 +14,24 @@ import (
 	"github.com/unbounded-tech/provider-authentik/config/blueprints"
 	"github.com/unbounded-tech/provider-authentik/config/docker"
 	"github.com/unbounded-tech/provider-authentik/config/enterprise"
-	"github.com/unbounded-tech/provider-authentik/config/events"
 	"github.com/unbounded-tech/provider-authentik/config/flows"
+	"github.com/unbounded-tech/provider-authentik/config/googleworkspace"
 	"github.com/unbounded-tech/provider-authentik/config/k8s"
+	"github.com/unbounded-tech/provider-authentik/config/kerberos"
+	"github.com/unbounded-tech/provider-authentik/config/ldap"
+	"github.com/unbounded-tech/provider-authentik/config/microsoftentra"
+	"github.com/unbounded-tech/provider-authentik/config/notifications"
+	"github.com/unbounded-tech/provider-authentik/config/oauth"
+	"github.com/unbounded-tech/provider-authentik/config/oauth2"
 	"github.com/unbounded-tech/provider-authentik/config/outposts"
 	"github.com/unbounded-tech/provider-authentik/config/policies"
-	"github.com/unbounded-tech/provider-authentik/config/propertymapping"
-	"github.com/unbounded-tech/provider-authentik/config/providers"
+	"github.com/unbounded-tech/provider-authentik/config/proxy"
 	"github.com/unbounded-tech/provider-authentik/config/rac"
+	"github.com/unbounded-tech/provider-authentik/config/radius"
 	"github.com/unbounded-tech/provider-authentik/config/rbac"
-	"github.com/unbounded-tech/provider-authentik/config/sources"
+	"github.com/unbounded-tech/provider-authentik/config/saml"
+	"github.com/unbounded-tech/provider-authentik/config/scope"
+	"github.com/unbounded-tech/provider-authentik/config/ssf"
 	"github.com/unbounded-tech/provider-authentik/config/stages"
 	"github.com/unbounded-tech/provider-authentik/config/system"
 	"github.com/unbounded-tech/provider-authentik/config/users"
@@ -56,19 +64,27 @@ func GetProvider() *ujconfig.Provider {
 		blueprints.Configure,
 		docker.Configure,
 		enterprise.Configure,
-		events.Configure,
 		flows.Configure,
+		googleworkspace.Configure,
 		k8s.Configure,
+		kerberos.Configure,
+		ldap.Configure,
+		microsoftentra.Configure,
+		notifications.Configure,
+		oauth.Configure,
+		oauth2.Configure,
 		outposts.Configure,
 		policies.Configure,
-		propertymapping.Configure,
-		providers.Configure,
+		proxy.Configure,
 		rac.Configure,
+		radius.Configure,
 		rbac.Configure,
-		sources.Configure,
+		saml.Configure,
+		scope.Configure,
+		ssf.Configure,
 		stages.Configure,
-		users.Configure,
 		system.Configure,
+		users.Configure,
 	} {
 		configure(pc)
 	}
