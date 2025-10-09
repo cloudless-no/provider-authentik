@@ -13,7 +13,7 @@ import (
 
 // Package type metadata.
 const (
-	Group   = "template.upbound.io"
+	Group   = "authentik.unbounded-tech.com"
 	Version = "v1alpha1"
 )
 

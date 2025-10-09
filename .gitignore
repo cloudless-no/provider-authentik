@@ -9,3 +9,8 @@ cover.out
 # ignore IDE folders
 .vscode/
 .idea/
+
+# terraform provider src for reference
+terraform-provider-authentik/
+
+.tmp

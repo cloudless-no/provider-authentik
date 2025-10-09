@@ -10,12 +10,19 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	"github.com/upbound/upjet-provider-template/config/null"
+	"github.com/unbounded-tech/provider-authentik/config/applications"
+	"github.com/unbounded-tech/provider-authentik/config/blueprints"
+	"github.com/unbounded-tech/provider-authentik/config/customization"
+	"github.com/unbounded-tech/provider-authentik/config/directory"
+	"github.com/unbounded-tech/provider-authentik/config/enterprise"
+	"github.com/unbounded-tech/provider-authentik/config/events"
+	"github.com/unbounded-tech/provider-authentik/config/rbac"
+	"github.com/unbounded-tech/provider-authentik/config/system"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/upbound/upjet-provider-template"
+	resourcePrefix = "authentik"
+	modulePath     = "github.com/unbounded-tech/provider-authentik"
 )
 
 //go:embed schema.json
@@ -27,7 +34,7 @@ var providerMetadata string
 // GetProvider returns provider configuration
 func GetProvider() *ujconfig.Provider {
 	pc := ujconfig.NewProvider([]byte(providerSchema), resourcePrefix, modulePath, []byte(providerMetadata),
-		ujconfig.WithRootGroup("template.upbound.io"),
+		ujconfig.WithRootGroup("unbounded-tech.com"),
 		ujconfig.WithIncludeList(ExternalNameConfigured()),
 		ujconfig.WithFeaturesPackage("internal/features"),
 		ujconfig.WithDefaultResourceOptions(
@@ -36,7 +43,15 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		applications.Configure,
+		blueprints.Configure,
+		customization.Configure,
+		directory.Configure,
+		enterprise.Configure,
+		events.Configure,
+		// flows_stages.Configure,
+		rbac.Configure,
+		system.Configure,
 	} {
 		configure(pc)
 	}
