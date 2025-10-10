@@ -1,33 +1,15 @@
 # Provider Authentik
 
-`provider-authentik` is a [Crossplane](https://crossplane.io/) provider that
-is built using [Upjet](https://github.com/crossplane/upjet) code
-generation tools and exposes XRM-conformant managed resources for the
-Authentik API.
+`provider-authentik` is a [Crossplane](https://crossplane.io/) provider
+authentik that is built using [Upjet](https://github.com/crossplane/upjet) code
+generation tools and exposes XRM-conformant managed resources for the Authentik
+API.
 
 ## Getting Started
 
-Install the provider by using the following command after changing the image tag
-to the [latest release](https://marketplace.upbound.io/providers/unbounded-tech/provider-authentik):
-```
-crossplane xpkg install provider xpkg.crossplane.io/unbounded-tech/provider-authentik:v0.1.0
-```
+This authentik serves as a starting point for generating a new [Crossplane Provider](https://docs.crossplane.io/latest/packages/providers/) using the [`upjet`](https://github.com/crossplane/upjet) tooling. Please follow the guide linked below to generate a new Provider:
 
-Alternatively, you can use declarative installation:
-```
-cat <<EOF | kubectl apply -f -
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-authentik
-spec:
-  package: xpkg.crossplane.io/unbounded-tech/provider-authentik:v0.1.0
-EOF
-```
-
-Notice that in this example Provider resource is referencing ControllerConfig with debug enabled.
-
-You can see the API reference [here](https://doc.crds.dev/github.com/unbounded-tech/provider-authentik).
+https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md
 
 ## Developing
 

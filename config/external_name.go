@@ -1,10 +1,8 @@
-/*
-Copyright 2022 Upbound Inc.
-*/
-
 package config
 
-import "github.com/crossplane/upjet/pkg/config"
+import (
+	"github.com/crossplane/upjet/v2/pkg/config"
+)
 
 // Deprecated terraform resources not included:
 // "authentik_property_mapping_google_workspace"
@@ -157,6 +155,15 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"authentik_group": config.IdentifierFromProvider,
 	"authentik_token": config.IdentifierFromProvider,
 	"authentik_user":  config.IdentifierFromProvider,
+}
+
+func idWithStub() config.ExternalName {
+	e := config.IdentifierFromProvider
+	e.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
+		en, _ := config.IDAsExternalName(tfstate)
+		return en, nil
+	}
+	return e
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
