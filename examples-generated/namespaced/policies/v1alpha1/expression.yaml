@@ -1,0 +1,13 @@
+apiVersion: policies.authentik.m.crossplane.io/v1alpha1
+kind: Expression
+metadata:
+  annotations:
+    meta.upbound.io/example-id: policies/v1alpha1/expression
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+  namespace: crossplane-system
+spec:
+  forProvider:
+    expression: return True
+    name: expression

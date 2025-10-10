@@ -1,0 +1,48 @@
+apiVersion: docker.authentik.m.crossplane.io/v1alpha1
+kind: ServiceConnection
+metadata:
+  annotations:
+    meta.upbound.io/example-id: docker/v1alpha1/serviceconnection
+  labels:
+    testing.upbound.io/example-name: local
+  name: local
+  namespace: crossplane-system
+spec:
+  forProvider:
+    local: true
+    name: local
+
+---
+
+apiVersion: system.authentik.m.crossplane.io/v1alpha1
+kind: CertificateKeyPair
+metadata:
+  annotations:
+    meta.upbound.io/example-id: docker/v1alpha1/serviceconnection
+  labels:
+    testing.upbound.io/example-name: tls-auth
+  name: tls-auth
+  namespace: crossplane-system
+spec:
+  forProvider:
+    certificateData: '...'
+    keyDataSecretRef:
+      key: example-key
+      name: example-secret
+    name: docker-tls-auth
+
+---
+
+apiVersion: system.authentik.m.crossplane.io/v1alpha1
+kind: CertificateKeyPair
+metadata:
+  annotations:
+    meta.upbound.io/example-id: docker/v1alpha1/serviceconnection
+  labels:
+    testing.upbound.io/example-name: tls-verification
+  name: tls-verification
+  namespace: crossplane-system
+spec:
+  forProvider:
+    certificateData: '...'
+    name: docker-tls-verification

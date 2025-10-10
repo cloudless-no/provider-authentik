@@ -1,0 +1,11 @@
+apiVersion: stages.authentik.crossplane.io/v1alpha1
+kind: Invitation
+metadata:
+  annotations:
+    meta.upbound.io/example-id: stages/v1alpha1/invitation
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    name: invitation

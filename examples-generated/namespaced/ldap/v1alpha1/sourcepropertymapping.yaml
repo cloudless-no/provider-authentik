@@ -1,0 +1,13 @@
+apiVersion: ldap.authentik.m.crossplane.io/v1alpha1
+kind: SourcePropertyMapping
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ldap/v1alpha1/sourcepropertymapping
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+  namespace: crossplane-system
+spec:
+  forProvider:
+    expression: return ldap.get('sAMAccountName')
+    name: custom-field

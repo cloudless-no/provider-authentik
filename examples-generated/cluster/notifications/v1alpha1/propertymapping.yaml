@@ -1,0 +1,12 @@
+apiVersion: notifications.authentik.crossplane.io/v1alpha1
+kind: PropertyMapping
+metadata:
+  annotations:
+    meta.upbound.io/example-id: notifications/v1alpha1/propertymapping
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+spec:
+  forProvider:
+    expression: 'return {"foo": context[''foo'']}'
+    name: custom-field

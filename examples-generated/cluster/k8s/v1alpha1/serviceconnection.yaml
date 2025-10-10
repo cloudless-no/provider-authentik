@@ -1,0 +1,12 @@
+apiVersion: k8s.authentik.crossplane.io/v1alpha1
+kind: ServiceConnection
+metadata:
+  annotations:
+    meta.upbound.io/example-id: k8s/v1alpha1/serviceconnection
+  labels:
+    testing.upbound.io/example-name: local
+  name: local
+spec:
+  forProvider:
+    local: true
+    name: local

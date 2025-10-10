@@ -10,7 +10,34 @@ package namespaced
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/namespaced/null/v1alpha1"
+	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/namespaced/applications/v1alpha1"
+	v1alpha1blueprints "github.com/unbounded-tech/provider-authentik/apis/namespaced/blueprints/v1alpha1"
+	v1alpha1docker "github.com/unbounded-tech/provider-authentik/apis/namespaced/docker/v1alpha1"
+	v1alpha1enterprise "github.com/unbounded-tech/provider-authentik/apis/namespaced/enterprise/v1alpha1"
+	v1alpha1flows "github.com/unbounded-tech/provider-authentik/apis/namespaced/flows/v1alpha1"
+	v1alpha1googleworkspace "github.com/unbounded-tech/provider-authentik/apis/namespaced/googleworkspace/v1alpha1"
+	v1alpha1k8s "github.com/unbounded-tech/provider-authentik/apis/namespaced/k8s/v1alpha1"
+	v1alpha1kerberos "github.com/unbounded-tech/provider-authentik/apis/namespaced/kerberos/v1alpha1"
+	v1alpha1ldap "github.com/unbounded-tech/provider-authentik/apis/namespaced/ldap/v1alpha1"
+	v1alpha1microsoftentra "github.com/unbounded-tech/provider-authentik/apis/namespaced/microsoftentra/v1alpha1"
+	v1alpha1notifications "github.com/unbounded-tech/provider-authentik/apis/namespaced/notifications/v1alpha1"
+	v1alpha1oauth "github.com/unbounded-tech/provider-authentik/apis/namespaced/oauth/v1alpha1"
+	v1alpha1oauth2 "github.com/unbounded-tech/provider-authentik/apis/namespaced/oauth2/v1alpha1"
+	v1alpha1outposts "github.com/unbounded-tech/provider-authentik/apis/namespaced/outposts/v1alpha1"
+	v1alpha1policies "github.com/unbounded-tech/provider-authentik/apis/namespaced/policies/v1alpha1"
+	v1alpha1property "github.com/unbounded-tech/provider-authentik/apis/namespaced/property/v1alpha1"
+	v1alpha1provider "github.com/unbounded-tech/provider-authentik/apis/namespaced/provider/v1alpha1"
+	v1alpha1proxy "github.com/unbounded-tech/provider-authentik/apis/namespaced/proxy/v1alpha1"
+	v1alpha1rac "github.com/unbounded-tech/provider-authentik/apis/namespaced/rac/v1alpha1"
+	v1alpha1radius "github.com/unbounded-tech/provider-authentik/apis/namespaced/radius/v1alpha1"
+	v1alpha1rbac "github.com/unbounded-tech/provider-authentik/apis/namespaced/rbac/v1alpha1"
+	v1alpha1saml "github.com/unbounded-tech/provider-authentik/apis/namespaced/saml/v1alpha1"
+	v1alpha1scope "github.com/unbounded-tech/provider-authentik/apis/namespaced/scope/v1alpha1"
+	v1alpha1source "github.com/unbounded-tech/provider-authentik/apis/namespaced/source/v1alpha1"
+	v1alpha1ssf "github.com/unbounded-tech/provider-authentik/apis/namespaced/ssf/v1alpha1"
+	v1alpha1stages "github.com/unbounded-tech/provider-authentik/apis/namespaced/stages/v1alpha1"
+	v1alpha1system "github.com/unbounded-tech/provider-authentik/apis/namespaced/system/v1alpha1"
+	v1alpha1users "github.com/unbounded-tech/provider-authentik/apis/namespaced/users/v1alpha1"
 	v1alpha1namespaced "github.com/unbounded-tech/provider-authentik/apis/namespaced/v1alpha1"
 	v1beta1 "github.com/unbounded-tech/provider-authentik/apis/namespaced/v1beta1"
 )
@@ -19,6 +46,33 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1blueprints.SchemeBuilder.AddToScheme,
+		v1alpha1docker.SchemeBuilder.AddToScheme,
+		v1alpha1enterprise.SchemeBuilder.AddToScheme,
+		v1alpha1flows.SchemeBuilder.AddToScheme,
+		v1alpha1googleworkspace.SchemeBuilder.AddToScheme,
+		v1alpha1k8s.SchemeBuilder.AddToScheme,
+		v1alpha1kerberos.SchemeBuilder.AddToScheme,
+		v1alpha1ldap.SchemeBuilder.AddToScheme,
+		v1alpha1microsoftentra.SchemeBuilder.AddToScheme,
+		v1alpha1notifications.SchemeBuilder.AddToScheme,
+		v1alpha1oauth.SchemeBuilder.AddToScheme,
+		v1alpha1oauth2.SchemeBuilder.AddToScheme,
+		v1alpha1outposts.SchemeBuilder.AddToScheme,
+		v1alpha1policies.SchemeBuilder.AddToScheme,
+		v1alpha1property.SchemeBuilder.AddToScheme,
+		v1alpha1provider.SchemeBuilder.AddToScheme,
+		v1alpha1proxy.SchemeBuilder.AddToScheme,
+		v1alpha1rac.SchemeBuilder.AddToScheme,
+		v1alpha1radius.SchemeBuilder.AddToScheme,
+		v1alpha1rbac.SchemeBuilder.AddToScheme,
+		v1alpha1saml.SchemeBuilder.AddToScheme,
+		v1alpha1scope.SchemeBuilder.AddToScheme,
+		v1alpha1source.SchemeBuilder.AddToScheme,
+		v1alpha1ssf.SchemeBuilder.AddToScheme,
+		v1alpha1stages.SchemeBuilder.AddToScheme,
+		v1alpha1system.SchemeBuilder.AddToScheme,
+		v1alpha1users.SchemeBuilder.AddToScheme,
 		v1alpha1namespaced.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)

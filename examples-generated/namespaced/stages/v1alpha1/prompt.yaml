@@ -1,0 +1,31 @@
+apiVersion: stages.authentik.m.crossplane.io/v1alpha1
+kind: Prompt
+metadata:
+  annotations:
+    meta.upbound.io/example-id: stages/v1alpha1/prompt
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+  namespace: crossplane-system
+spec:
+  forProvider:
+    fieldsRefs:
+    - name: authentik_stage_prompt_field
+    name: test
+
+---
+
+apiVersion: stages.authentik.m.crossplane.io/v1alpha1
+kind: PromptField
+metadata:
+  annotations:
+    meta.upbound.io/example-id: stages/v1alpha1/prompt
+  labels:
+    testing.upbound.io/example-name: field
+  name: field
+  namespace: crossplane-system
+spec:
+  forProvider:
+    fieldKey: username
+    label: Username
+    type: username

@@ -1,0 +1,12 @@
+apiVersion: stages.authentik.m.crossplane.io/v1alpha1
+kind: AuthenticatorTotp
+metadata:
+  annotations:
+    meta.upbound.io/example-id: stages/v1alpha1/authenticatortotp
+  labels:
+    testing.upbound.io/example-name: name
+  name: name
+  namespace: crossplane-system
+spec:
+  forProvider:
+    name: totp-setup

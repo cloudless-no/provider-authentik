@@ -1,0 +1,11 @@
+apiVersion: stages.authentik.crossplane.io/v1alpha1
+kind: MutualTls
+metadata:
+  annotations:
+    meta.upbound.io/example-id: stages/v1alpha1/mutualtls
+  labels:
+    testing.upbound.io/example-name: mtls
+  name: mtls
+spec:
+  forProvider:
+    name: mutual-tls

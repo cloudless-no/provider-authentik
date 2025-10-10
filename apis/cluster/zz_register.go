@@ -10,7 +10,34 @@ package cluster
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/cluster/null/v1alpha1"
+	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/cluster/applications/v1alpha1"
+	v1alpha1blueprints "github.com/unbounded-tech/provider-authentik/apis/cluster/blueprints/v1alpha1"
+	v1alpha1docker "github.com/unbounded-tech/provider-authentik/apis/cluster/docker/v1alpha1"
+	v1alpha1enterprise "github.com/unbounded-tech/provider-authentik/apis/cluster/enterprise/v1alpha1"
+	v1alpha1flows "github.com/unbounded-tech/provider-authentik/apis/cluster/flows/v1alpha1"
+	v1alpha1googleworkspace "github.com/unbounded-tech/provider-authentik/apis/cluster/googleworkspace/v1alpha1"
+	v1alpha1k8s "github.com/unbounded-tech/provider-authentik/apis/cluster/k8s/v1alpha1"
+	v1alpha1kerberos "github.com/unbounded-tech/provider-authentik/apis/cluster/kerberos/v1alpha1"
+	v1alpha1ldap "github.com/unbounded-tech/provider-authentik/apis/cluster/ldap/v1alpha1"
+	v1alpha1microsoftentra "github.com/unbounded-tech/provider-authentik/apis/cluster/microsoftentra/v1alpha1"
+	v1alpha1notifications "github.com/unbounded-tech/provider-authentik/apis/cluster/notifications/v1alpha1"
+	v1alpha1oauth "github.com/unbounded-tech/provider-authentik/apis/cluster/oauth/v1alpha1"
+	v1alpha1oauth2 "github.com/unbounded-tech/provider-authentik/apis/cluster/oauth2/v1alpha1"
+	v1alpha1outposts "github.com/unbounded-tech/provider-authentik/apis/cluster/outposts/v1alpha1"
+	v1alpha1policies "github.com/unbounded-tech/provider-authentik/apis/cluster/policies/v1alpha1"
+	v1alpha1property "github.com/unbounded-tech/provider-authentik/apis/cluster/property/v1alpha1"
+	v1alpha1provider "github.com/unbounded-tech/provider-authentik/apis/cluster/provider/v1alpha1"
+	v1alpha1proxy "github.com/unbounded-tech/provider-authentik/apis/cluster/proxy/v1alpha1"
+	v1alpha1rac "github.com/unbounded-tech/provider-authentik/apis/cluster/rac/v1alpha1"
+	v1alpha1radius "github.com/unbounded-tech/provider-authentik/apis/cluster/radius/v1alpha1"
+	v1alpha1rbac "github.com/unbounded-tech/provider-authentik/apis/cluster/rbac/v1alpha1"
+	v1alpha1saml "github.com/unbounded-tech/provider-authentik/apis/cluster/saml/v1alpha1"
+	v1alpha1scope "github.com/unbounded-tech/provider-authentik/apis/cluster/scope/v1alpha1"
+	v1alpha1source "github.com/unbounded-tech/provider-authentik/apis/cluster/source/v1alpha1"
+	v1alpha1ssf "github.com/unbounded-tech/provider-authentik/apis/cluster/ssf/v1alpha1"
+	v1alpha1stages "github.com/unbounded-tech/provider-authentik/apis/cluster/stages/v1alpha1"
+	v1alpha1system "github.com/unbounded-tech/provider-authentik/apis/cluster/system/v1alpha1"
+	v1alpha1users "github.com/unbounded-tech/provider-authentik/apis/cluster/users/v1alpha1"
 	v1alpha1cluster "github.com/unbounded-tech/provider-authentik/apis/cluster/v1alpha1"
 	v1beta1 "github.com/unbounded-tech/provider-authentik/apis/cluster/v1beta1"
 )
@@ -19,6 +46,33 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1blueprints.SchemeBuilder.AddToScheme,
+		v1alpha1docker.SchemeBuilder.AddToScheme,
+		v1alpha1enterprise.SchemeBuilder.AddToScheme,
+		v1alpha1flows.SchemeBuilder.AddToScheme,
+		v1alpha1googleworkspace.SchemeBuilder.AddToScheme,
+		v1alpha1k8s.SchemeBuilder.AddToScheme,
+		v1alpha1kerberos.SchemeBuilder.AddToScheme,
+		v1alpha1ldap.SchemeBuilder.AddToScheme,
+		v1alpha1microsoftentra.SchemeBuilder.AddToScheme,
+		v1alpha1notifications.SchemeBuilder.AddToScheme,
+		v1alpha1oauth.SchemeBuilder.AddToScheme,
+		v1alpha1oauth2.SchemeBuilder.AddToScheme,
+		v1alpha1outposts.SchemeBuilder.AddToScheme,
+		v1alpha1policies.SchemeBuilder.AddToScheme,
+		v1alpha1property.SchemeBuilder.AddToScheme,
+		v1alpha1provider.SchemeBuilder.AddToScheme,
+		v1alpha1proxy.SchemeBuilder.AddToScheme,
+		v1alpha1rac.SchemeBuilder.AddToScheme,
+		v1alpha1radius.SchemeBuilder.AddToScheme,
+		v1alpha1rbac.SchemeBuilder.AddToScheme,
+		v1alpha1saml.SchemeBuilder.AddToScheme,
+		v1alpha1scope.SchemeBuilder.AddToScheme,
+		v1alpha1source.SchemeBuilder.AddToScheme,
+		v1alpha1ssf.SchemeBuilder.AddToScheme,
+		v1alpha1stages.SchemeBuilder.AddToScheme,
+		v1alpha1system.SchemeBuilder.AddToScheme,
+		v1alpha1users.SchemeBuilder.AddToScheme,
 		v1alpha1cluster.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)
