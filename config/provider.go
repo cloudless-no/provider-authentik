@@ -20,12 +20,14 @@ import (
 	oauthCluster "github.com/unbounded-tech/provider-authentik/config/cluster/oauth"
 	oauth2Cluster "github.com/unbounded-tech/provider-authentik/config/cluster/oauth2"
 	outpostsCluster "github.com/unbounded-tech/provider-authentik/config/cluster/outposts"
+	plexCluster "github.com/unbounded-tech/provider-authentik/config/cluster/plex"
 	policiesCluster "github.com/unbounded-tech/provider-authentik/config/cluster/policies"
 	proxyCluster "github.com/unbounded-tech/provider-authentik/config/cluster/proxy"
 	racCluster "github.com/unbounded-tech/provider-authentik/config/cluster/rac"
 	radiusCluster "github.com/unbounded-tech/provider-authentik/config/cluster/radius"
 	rbacCluster "github.com/unbounded-tech/provider-authentik/config/cluster/rbac"
 	samlCluster "github.com/unbounded-tech/provider-authentik/config/cluster/saml"
+	scimCluster "github.com/unbounded-tech/provider-authentik/config/cluster/scim"
 	scopeCluster "github.com/unbounded-tech/provider-authentik/config/cluster/scope"
 	ssfCluster "github.com/unbounded-tech/provider-authentik/config/cluster/ssf"
 	stagesCluster "github.com/unbounded-tech/provider-authentik/config/cluster/stages"
@@ -46,12 +48,14 @@ import (
 	oauthNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/oauth"
 	oauth2Namespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/oauth2"
 	outpostsNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/outposts"
+	plexNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/plex"
 	policiesNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/policies"
 	proxyNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/proxy"
 	racNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/rac"
 	radiusNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/radius"
 	rbacNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/rbac"
 	samlNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/saml"
+	scimNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/scim"
 	scopeNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/scope"
 	ssfNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/ssf"
 	stagesNamespaced "github.com/unbounded-tech/provider-authentik/config/namespaced/stages"
@@ -96,12 +100,14 @@ func GetProvider() *ujconfig.Provider {
 		oauthCluster.Configure,
 		oauth2Cluster.Configure,
 		outpostsCluster.Configure,
+		plexCluster.Configure,
 		policiesCluster.Configure,
 		proxyCluster.Configure,
 		racCluster.Configure,
 		radiusCluster.Configure,
 		rbacCluster.Configure,
 		samlCluster.Configure,
+		scimCluster.Configure,
 		scopeCluster.Configure,
 		ssfCluster.Configure,
 		stagesCluster.Configure,
@@ -144,12 +150,14 @@ func GetProviderNamespaced() *ujconfig.Provider {
 		oauthNamespaced.Configure,
 		oauth2Namespaced.Configure,
 		outpostsNamespaced.Configure,
+		plexNamespaced.Configure,
 		policiesNamespaced.Configure,
 		proxyNamespaced.Configure,
 		racNamespaced.Configure,
 		radiusNamespaced.Configure,
 		rbacNamespaced.Configure,
 		samlNamespaced.Configure,
+		scimNamespaced.Configure,
 		scopeNamespaced.Configure,
 		ssfNamespaced.Configure,
 		stagesNamespaced.Configure,
