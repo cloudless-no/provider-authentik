@@ -32,6 +32,8 @@ import (
 	sourcepropertymappingoauth "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/oauth/sourcepropertymapping"
 	provideroauth2 "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/oauth2/provider"
 	outpost "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/outposts/outpost"
+	sourceplex "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/plex/source"
+	sourcepropertymappingplex "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/plex/sourcepropertymapping"
 	binding "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/binding"
 	dummy "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/dummy"
 	eventmatcher "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/eventmatcher"
@@ -41,10 +43,6 @@ import (
 	password "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/password"
 	reputation "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/reputation"
 	uniquepassword "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/policies/uniquepassword"
-	mappingproviderscim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/property/mappingproviderscim"
-	mappingsourceplex "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/property/mappingsourceplex"
-	mappingsourcescim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/property/mappingsourcescim"
-	scim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/provider/scim"
 	providerconfig "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/providerconfig"
 	providerproxy "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/proxy/provider"
 	endpoint "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/rac/endpoint"
@@ -60,8 +58,10 @@ import (
 	providerpropertymappingsaml "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/saml/providerpropertymapping"
 	sourcesaml "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/saml/source"
 	sourcepropertymappingsaml "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/saml/sourcepropertymapping"
+	providerscim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/scim/provider"
+	providerpropertymappingscim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/scim/providerpropertymapping"
+	sourcepropertymappingscim "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/scim/sourcepropertymapping"
 	providerpropertymappingscope "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/scope/providerpropertymapping"
-	plex "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/source/plex"
 	providerssf "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/ssf/provider"
 	authenticatorduo "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/stages/authenticatorduo"
 	authenticatoremail "github.com/unbounded-tech/provider-authentik/internal/controller/cluster/stages/authenticatoremail"
@@ -123,6 +123,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		sourcepropertymappingoauth.Setup,
 		provideroauth2.Setup,
 		outpost.Setup,
+		sourceplex.Setup,
+		sourcepropertymappingplex.Setup,
 		binding.Setup,
 		dummy.Setup,
 		eventmatcher.Setup,
@@ -132,10 +134,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		password.Setup,
 		reputation.Setup,
 		uniquepassword.Setup,
-		mappingproviderscim.Setup,
-		mappingsourceplex.Setup,
-		mappingsourcescim.Setup,
-		scim.Setup,
 		providerconfig.Setup,
 		providerproxy.Setup,
 		endpoint.Setup,
@@ -151,8 +149,10 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		providerpropertymappingsaml.Setup,
 		sourcesaml.Setup,
 		sourcepropertymappingsaml.Setup,
+		providerscim.Setup,
+		providerpropertymappingscim.Setup,
+		sourcepropertymappingscim.Setup,
 		providerpropertymappingscope.Setup,
-		plex.Setup,
 		providerssf.Setup,
 		authenticatorduo.Setup,
 		authenticatoremail.Setup,
@@ -220,6 +220,8 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		sourcepropertymappingoauth.SetupGated,
 		provideroauth2.SetupGated,
 		outpost.SetupGated,
+		sourceplex.SetupGated,
+		sourcepropertymappingplex.SetupGated,
 		binding.SetupGated,
 		dummy.SetupGated,
 		eventmatcher.SetupGated,
@@ -229,10 +231,6 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		password.SetupGated,
 		reputation.SetupGated,
 		uniquepassword.SetupGated,
-		mappingproviderscim.SetupGated,
-		mappingsourceplex.SetupGated,
-		mappingsourcescim.SetupGated,
-		scim.SetupGated,
 		providerconfig.SetupGated,
 		providerproxy.SetupGated,
 		endpoint.SetupGated,
@@ -248,8 +246,10 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		providerpropertymappingsaml.SetupGated,
 		sourcesaml.SetupGated,
 		sourcepropertymappingsaml.SetupGated,
+		providerscim.SetupGated,
+		providerpropertymappingscim.SetupGated,
+		sourcepropertymappingscim.SetupGated,
 		providerpropertymappingscope.SetupGated,
-		plex.SetupGated,
 		providerssf.SetupGated,
 		authenticatorduo.SetupGated,
 		authenticatoremail.SetupGated,

@@ -24,16 +24,15 @@ import (
 	v1alpha1oauth "github.com/unbounded-tech/provider-authentik/apis/cluster/oauth/v1alpha1"
 	v1alpha1oauth2 "github.com/unbounded-tech/provider-authentik/apis/cluster/oauth2/v1alpha1"
 	v1alpha1outposts "github.com/unbounded-tech/provider-authentik/apis/cluster/outposts/v1alpha1"
+	v1alpha1plex "github.com/unbounded-tech/provider-authentik/apis/cluster/plex/v1alpha1"
 	v1alpha1policies "github.com/unbounded-tech/provider-authentik/apis/cluster/policies/v1alpha1"
-	v1alpha1property "github.com/unbounded-tech/provider-authentik/apis/cluster/property/v1alpha1"
-	v1alpha1provider "github.com/unbounded-tech/provider-authentik/apis/cluster/provider/v1alpha1"
 	v1alpha1proxy "github.com/unbounded-tech/provider-authentik/apis/cluster/proxy/v1alpha1"
 	v1alpha1rac "github.com/unbounded-tech/provider-authentik/apis/cluster/rac/v1alpha1"
 	v1alpha1radius "github.com/unbounded-tech/provider-authentik/apis/cluster/radius/v1alpha1"
 	v1alpha1rbac "github.com/unbounded-tech/provider-authentik/apis/cluster/rbac/v1alpha1"
 	v1alpha1saml "github.com/unbounded-tech/provider-authentik/apis/cluster/saml/v1alpha1"
+	v1alpha1scim "github.com/unbounded-tech/provider-authentik/apis/cluster/scim/v1alpha1"
 	v1alpha1scope "github.com/unbounded-tech/provider-authentik/apis/cluster/scope/v1alpha1"
-	v1alpha1source "github.com/unbounded-tech/provider-authentik/apis/cluster/source/v1alpha1"
 	v1alpha1ssf "github.com/unbounded-tech/provider-authentik/apis/cluster/ssf/v1alpha1"
 	v1alpha1stages "github.com/unbounded-tech/provider-authentik/apis/cluster/stages/v1alpha1"
 	v1alpha1system "github.com/unbounded-tech/provider-authentik/apis/cluster/system/v1alpha1"
@@ -59,16 +58,15 @@ func init() {
 		v1alpha1oauth.SchemeBuilder.AddToScheme,
 		v1alpha1oauth2.SchemeBuilder.AddToScheme,
 		v1alpha1outposts.SchemeBuilder.AddToScheme,
+		v1alpha1plex.SchemeBuilder.AddToScheme,
 		v1alpha1policies.SchemeBuilder.AddToScheme,
-		v1alpha1property.SchemeBuilder.AddToScheme,
-		v1alpha1provider.SchemeBuilder.AddToScheme,
 		v1alpha1proxy.SchemeBuilder.AddToScheme,
 		v1alpha1rac.SchemeBuilder.AddToScheme,
 		v1alpha1radius.SchemeBuilder.AddToScheme,
 		v1alpha1rbac.SchemeBuilder.AddToScheme,
 		v1alpha1saml.SchemeBuilder.AddToScheme,
+		v1alpha1scim.SchemeBuilder.AddToScheme,
 		v1alpha1scope.SchemeBuilder.AddToScheme,
-		v1alpha1source.SchemeBuilder.AddToScheme,
 		v1alpha1ssf.SchemeBuilder.AddToScheme,
 		v1alpha1stages.SchemeBuilder.AddToScheme,
 		v1alpha1system.SchemeBuilder.AddToScheme,

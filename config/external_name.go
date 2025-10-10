@@ -4,17 +4,6 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/config"
 )
 
-// Deprecated terraform resources not included:
-// "authentik_property_mapping_google_workspace"
-// "authentik_property_mapping_ldap"
-// "authentik_property_mapping_microsoft_entra"
-// "authentik_property_mapping_rac"
-// "authentik_property_mapping_radius"
-// "authentik_property_mapping_saml"
-// "authentik_property_mapping_scim"
-// "authentik_scope_mapping"
-// "authentik_property_mapping_source_kerberos"
-
 // ExternalNameConfigs contains all external name configurations for this
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
