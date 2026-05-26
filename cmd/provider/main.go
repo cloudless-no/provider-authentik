@@ -208,7 +208,7 @@ func main() {
 		clo := xpcontroller.ChangeLogOptions{
 			ChangeLogger: managed.NewGRPCChangeLogger(
 				changelogsv1alpha1.NewChangeLogServiceClient(conn),
-				managed.WithProviderVersion(fmt.Sprintf("provider-upjet-aws:%s", version.Version))),
+				managed.WithProviderVersion(fmt.Sprintf("provider-authentik:%s", version.Version))),
 		}
 		clusterOpts.ChangeLogOptions = &clo
 		namespacedOpts.ChangeLogOptions = &clo
@@ -252,7 +252,7 @@ func canWatchCRD(ctx context.Context, mgr manager.Manager) (bool, error) {
 			},
 		}
 		if err := mgr.GetClient().Create(ctx, sar); err != nil {
-			return false, errors.Wrapf(err, "unable to perform RBAC check for verb %s on CustomResourceDefinitions", verbs)
+			return false, errors.Wrapf(err, "unable to perform RBAC check for verb %s on CustomResourceDefinitions", verb)
 		}
 		if !sar.Status.Allowed {
 			return false, nil

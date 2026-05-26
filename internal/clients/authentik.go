@@ -53,16 +53,10 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
 		}
 
-		// Set credentials in Terraform provider configuration.
-		/*ps.Configuration = map[string]any{
-			"username": creds["username"],
-			"password": creds["password"],
-		}*/
-
+		ps.Configuration = terraform.ProviderConfiguration{}
 		if v, ok := creds[keyUrl]; ok {
 			ps.Configuration[keyUrl] = v
 		}
-
 		if v, ok := creds[keyToken]; ok {
 			ps.Configuration[keyToken] = v
 		}
