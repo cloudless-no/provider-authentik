@@ -60,6 +60,12 @@ type ProviderInitParameters struct {
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.NamespacedSelector `json:"propertyMappingsSelector,omitempty" tf:"-"`
 
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
+
 	// Allowed values:
 	// - `do_nothing`
 	// - `delete`
@@ -97,6 +103,12 @@ type ProviderObservation struct {
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
 
 	PropertyMappingsGroup []*string `json:"propertyMappingsGroup,omitempty" tf:"property_mappings_group,omitempty"`
+
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
 
 	// Allowed values:
 	// - `do_nothing`
@@ -161,6 +173,14 @@ type ProviderParameters struct {
 	// Selector for a list of ProviderPropertyMapping in googleworkspace to populate propertyMappings.
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.NamespacedSelector `json:"propertyMappingsSelector,omitempty" tf:"-"`
+
+	// Defaults to `100`.
+	// +kubebuilder:validation:Optional
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	// +kubebuilder:validation:Optional
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
 
 	// Allowed values:
 	// - `do_nothing`

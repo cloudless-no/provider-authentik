@@ -72,6 +72,24 @@ spec:
                 type: string
               forProvider:
                 properties:
+                  authMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `token`
+                      - `oauth`
+                      Defaults to `token`.
+                    type: string
+                  authOauth:
+                    description: |-
+                      (String) Slug of an OAuth source used for authentication
+                      Slug of an OAuth source used for authentication
+                    type: string
+                  authOauthParams:
+                    description: |-
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+                    type: string
                   compatibilityMode:
                     description: |-
                       (String) Allowed values:
@@ -79,6 +97,7 @@ spec:
                       - `default`
                       - `aws`
                       - `slack`
+                      - `sfdc`
                       Defaults to `default`.
                     type: string
                   dryRun:
@@ -89,9 +108,10 @@ spec:
                   excludeUsersServiceAccount:
                     description: (Boolean)
                     type: boolean
-                  filterGroup:
-                    description: (String)
-                    type: string
+                  groupFilters:
+                    items:
+                      type: string
+                    type: array
                   name:
                     description: (String)
                     type: string
@@ -263,6 +283,21 @@ spec:
                             type: string
                         type: object
                     type: object
+                  serviceProviderConfigCacheTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+                    type: string
+                  syncPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+                    type: string
                   tokenSecretRef:
                     description: (String, Sensitive)
                     properties:
@@ -297,6 +332,24 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
+                  authMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `token`
+                      - `oauth`
+                      Defaults to `token`.
+                    type: string
+                  authOauth:
+                    description: |-
+                      (String) Slug of an OAuth source used for authentication
+                      Slug of an OAuth source used for authentication
+                    type: string
+                  authOauthParams:
+                    description: |-
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+                    type: string
                   compatibilityMode:
                     description: |-
                       (String) Allowed values:
@@ -304,6 +357,7 @@ spec:
                       - `default`
                       - `aws`
                       - `slack`
+                      - `sfdc`
                       Defaults to `default`.
                     type: string
                   dryRun:
@@ -314,9 +368,10 @@ spec:
                   excludeUsersServiceAccount:
                     description: (Boolean)
                     type: boolean
-                  filterGroup:
-                    description: (String)
-                    type: string
+                  groupFilters:
+                    items:
+                      type: string
+                    type: array
                   name:
                     description: (String)
                     type: string
@@ -488,6 +543,21 @@ spec:
                             type: string
                         type: object
                     type: object
+                  serviceProviderConfigCacheTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+                    type: string
+                  syncPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+                    type: string
                   tokenSecretRef:
                     description: (String, Sensitive)
                     properties:
@@ -508,8 +578,6 @@ spec:
                   url:
                     description: (String)
                     type: string
-                required:
-                - tokenSecretRef
                 type: object
               managementPolicies:
                 default:
@@ -602,9 +670,6 @@ spec:
               rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.name)
                 || (has(self.initProvider) && has(self.initProvider.name))'
-            - message: spec.forProvider.tokenSecretRef is a required parameter
-              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
-                || ''Update'' in self.managementPolicies) || has(self.forProvider.tokenSecretRef)'
             - message: spec.forProvider.url is a required parameter
               rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.url)
@@ -614,6 +679,24 @@ spec:
             properties:
               atProvider:
                 properties:
+                  authMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `token`
+                      - `oauth`
+                      Defaults to `token`.
+                    type: string
+                  authOauth:
+                    description: |-
+                      (String) Slug of an OAuth source used for authentication
+                      Slug of an OAuth source used for authentication
+                    type: string
+                  authOauthParams:
+                    description: |-
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+                    type: string
                   compatibilityMode:
                     description: |-
                       (String) Allowed values:
@@ -621,6 +704,7 @@ spec:
                       - `default`
                       - `aws`
                       - `slack`
+                      - `sfdc`
                       Defaults to `default`.
                     type: string
                   dryRun:
@@ -631,9 +715,10 @@ spec:
                   excludeUsersServiceAccount:
                     description: (Boolean)
                     type: boolean
-                  filterGroup:
-                    description: (String)
-                    type: string
+                  groupFilters:
+                    items:
+                      type: string
+                    type: array
                   id:
                     description: (String) The ID of this resource.
                     type: string
@@ -650,6 +735,21 @@ spec:
                     items:
                       type: string
                     type: array
+                  serviceProviderConfigCacheTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+                    type: string
+                  syncPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+                    type: string
                   url:
                     description: (String)
                     type: string

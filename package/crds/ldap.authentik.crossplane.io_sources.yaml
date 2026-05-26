@@ -332,6 +332,15 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
+                    type: string
                   syncParentGroup:
                     description: (String)
                     type: string
@@ -639,6 +648,15 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
+                    type: string
                   syncParentGroup:
                     description: (String)
                     type: string
@@ -878,6 +896,15 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
+                    type: string
                   syncParentGroup:
                     description: (String)
                     type: string

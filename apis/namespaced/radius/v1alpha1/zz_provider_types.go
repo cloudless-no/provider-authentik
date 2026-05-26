@@ -28,6 +28,9 @@ type ProviderInitParameters struct {
 	// +kubebuilder:validation:Optional
 	AuthorizationFlowSelector *v1.NamespacedSelector `json:"authorizationFlowSelector,omitempty" tf:"-"`
 
+	// (String)
+	Certificate *string `json:"certificate,omitempty" tf:"certificate,omitempty"`
+
 	// (String) Defaults to 0.0.0.0/0, ::/0.
 	// Defaults to `0.0.0.0/0, ::/0`.
 	ClientNetworks *string `json:"clientNetworks,omitempty" tf:"client_networks,omitempty"`
@@ -72,6 +75,9 @@ type ProviderObservation struct {
 	// (String)
 	AuthorizationFlow *string `json:"authorizationFlow,omitempty" tf:"authorization_flow,omitempty"`
 
+	// (String)
+	Certificate *string `json:"certificate,omitempty" tf:"certificate,omitempty"`
+
 	// (String) Defaults to 0.0.0.0/0, ::/0.
 	// Defaults to `0.0.0.0/0, ::/0`.
 	ClientNetworks *string `json:"clientNetworks,omitempty" tf:"client_networks,omitempty"`
@@ -107,6 +113,10 @@ type ProviderParameters struct {
 	// Selector for a Flow in flows to populate authorizationFlow.
 	// +kubebuilder:validation:Optional
 	AuthorizationFlowSelector *v1.NamespacedSelector `json:"authorizationFlowSelector,omitempty" tf:"-"`
+
+	// (String)
+	// +kubebuilder:validation:Optional
+	Certificate *string `json:"certificate,omitempty" tf:"certificate,omitempty"`
 
 	// (String) Defaults to 0.0.0.0/0, ::/0.
 	// Defaults to `0.0.0.0/0, ::/0`.

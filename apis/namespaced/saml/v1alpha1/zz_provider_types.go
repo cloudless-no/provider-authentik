@@ -90,6 +90,14 @@ type ProviderInitParameters struct {
 	// Defaults to `authentik`.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `frontchannel_iframe`
+	// - `frontchannel_native`
+	// - `backchannel`
+	// Defaults to `frontchannel_iframe`.
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
@@ -118,6 +126,10 @@ type ProviderInitParameters struct {
 
 	// (Boolean) Defaults to false.
 	// Defaults to `false`.
+	SignLogoutRequest *bool `json:"signLogoutRequest,omitempty" tf:"sign_logout_request,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
 	SignResponse *bool `json:"signResponse,omitempty" tf:"sign_response,omitempty"`
 
 	// (String) Allowed values:
@@ -136,6 +148,16 @@ type ProviderInitParameters struct {
 
 	// (String)
 	SigningKp *string `json:"signingKp,omitempty" tf:"signing_kp,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
+	// - `redirect`
+	// - `post`
+	// Defaults to `redirect`.
+	SlsBinding *string `json:"slsBinding,omitempty" tf:"sls_binding,omitempty"`
+
+	// (String)
+	SlsURL *string `json:"slsUrl,omitempty" tf:"sls_url,omitempty"`
 
 	// (String) Allowed values:
 	// Allowed values:
@@ -220,6 +242,14 @@ type ProviderObservation struct {
 	// Defaults to `authentik`.
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `frontchannel_iframe`
+	// - `frontchannel_native`
+	// - `backchannel`
+	// Defaults to `frontchannel_iframe`.
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
@@ -236,6 +266,10 @@ type ProviderObservation struct {
 	// (Boolean) Defaults to true.
 	// Defaults to `true`.
 	SignAssertion *bool `json:"signAssertion,omitempty" tf:"sign_assertion,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	SignLogoutRequest *bool `json:"signLogoutRequest,omitempty" tf:"sign_logout_request,omitempty"`
 
 	// (Boolean) Defaults to false.
 	// Defaults to `false`.
@@ -257,6 +291,16 @@ type ProviderObservation struct {
 
 	// (String)
 	SigningKp *string `json:"signingKp,omitempty" tf:"signing_kp,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
+	// - `redirect`
+	// - `post`
+	// Defaults to `redirect`.
+	SlsBinding *string `json:"slsBinding,omitempty" tf:"sls_binding,omitempty"`
+
+	// (String)
+	SlsURL *string `json:"slsUrl,omitempty" tf:"sls_url,omitempty"`
 
 	// (String) Allowed values:
 	// Allowed values:
@@ -377,6 +421,15 @@ type ProviderParameters struct {
 	// +kubebuilder:validation:Optional
 	Issuer *string `json:"issuer,omitempty" tf:"issuer,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `frontchannel_iframe`
+	// - `frontchannel_native`
+	// - `backchannel`
+	// Defaults to `frontchannel_iframe`.
+	// +kubebuilder:validation:Optional
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
 	// (String)
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -411,6 +464,11 @@ type ProviderParameters struct {
 	// (Boolean) Defaults to false.
 	// Defaults to `false`.
 	// +kubebuilder:validation:Optional
+	SignLogoutRequest *bool `json:"signLogoutRequest,omitempty" tf:"sign_logout_request,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
 	SignResponse *bool `json:"signResponse,omitempty" tf:"sign_response,omitempty"`
 
 	// (String) Allowed values:
@@ -431,6 +489,18 @@ type ProviderParameters struct {
 	// (String)
 	// +kubebuilder:validation:Optional
 	SigningKp *string `json:"signingKp,omitempty" tf:"signing_kp,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
+	// - `redirect`
+	// - `post`
+	// Defaults to `redirect`.
+	// +kubebuilder:validation:Optional
+	SlsBinding *string `json:"slsBinding,omitempty" tf:"sls_binding,omitempty"`
+
+	// (String)
+	// +kubebuilder:validation:Optional
+	SlsURL *string `json:"slsUrl,omitempty" tf:"sls_url,omitempty"`
 
 	// (String) Allowed values:
 	// Allowed values:

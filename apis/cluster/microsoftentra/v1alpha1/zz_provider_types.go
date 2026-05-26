@@ -55,6 +55,12 @@ type ProviderInitParameters struct {
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.Selector `json:"propertyMappingsSelector,omitempty" tf:"-"`
 
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
+
 	TenantID *string `json:"tenantId,omitempty" tf:"tenant_id,omitempty"`
 
 	// Allowed values:
@@ -87,6 +93,12 @@ type ProviderObservation struct {
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
 
 	PropertyMappingsGroup []*string `json:"propertyMappingsGroup,omitempty" tf:"property_mappings_group,omitempty"`
+
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
 
 	TenantID *string `json:"tenantId,omitempty" tf:"tenant_id,omitempty"`
 
@@ -148,6 +160,14 @@ type ProviderParameters struct {
 	// Selector for a list of ProviderPropertyMapping in microsoftentra to populate propertyMappings.
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.Selector `json:"propertyMappingsSelector,omitempty" tf:"-"`
+
+	// Defaults to `100`.
+	// +kubebuilder:validation:Optional
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	// +kubebuilder:validation:Optional
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	TenantID *string `json:"tenantId,omitempty" tf:"tenant_id,omitempty"`

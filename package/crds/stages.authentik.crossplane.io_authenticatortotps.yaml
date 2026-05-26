@@ -158,7 +158,9 @@ spec:
                       Defaults to `6`.
                     type: string
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   name:
                     description: (String)
@@ -263,7 +265,9 @@ spec:
                       Defaults to `6`.
                     type: string
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   name:
                     description: (String)
@@ -377,7 +381,9 @@ spec:
                       Defaults to `6`.
                     type: string
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   id:
                     description: (String) The ID of this resource.

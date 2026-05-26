@@ -73,12 +73,6 @@ spec:
                 type: string
               forProvider:
                 properties:
-                  mode:
-                    description: |-
-                      Allowed values:
-                      - `user`
-                      - `role`
-                    type: string
                   name:
                     type: string
                   permissions:
@@ -175,12 +169,6 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
-                  mode:
-                    description: |-
-                      Allowed values:
-                      - `user`
-                      - `role`
-                    type: string
                   name:
                     type: string
                   permissions:
@@ -351,10 +339,6 @@ spec:
             - forProvider
             type: object
             x-kubernetes-validations:
-            - message: spec.forProvider.mode is a required parameter
-              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
-                || ''Update'' in self.managementPolicies) || has(self.forProvider.mode)
-                || (has(self.initProvider) && has(self.initProvider.mode))'
             - message: spec.forProvider.name is a required parameter
               rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.name)
@@ -369,12 +353,6 @@ spec:
               atProvider:
                 properties:
                   id:
-                    type: string
-                  mode:
-                    description: |-
-                      Allowed values:
-                      - `user`
-                      - `role`
                     type: string
                   name:
                     type: string

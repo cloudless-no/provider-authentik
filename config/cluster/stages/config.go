@@ -3,6 +3,7 @@ package stages
 import "github.com/crossplane/upjet/v2/pkg/config"
 
 const ShortGroup = "stages"
+const authentikFlow = "authentik_flow"
 
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
@@ -10,7 +11,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorDuo"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -18,7 +19,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorEmail"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -26,7 +27,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorEndpointGdtc"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -34,7 +35,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorSms"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -42,7 +43,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorStatic"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -50,7 +51,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorTotp"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -63,7 +64,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "AuthenticatorWebauthn"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -97,13 +98,13 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "Identification"
 		r.References["enrollment_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["passwordless_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["recovery_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["password_stage"] = config.Reference{
 			TerraformName: "authentik_stage_password",
@@ -128,7 +129,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "Password"
 		r.References["configure_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 
@@ -150,7 +151,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "Redirect"
 		r.References["target_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 	})
 

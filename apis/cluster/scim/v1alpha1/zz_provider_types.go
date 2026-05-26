@@ -17,9 +17,25 @@ type ProviderInitParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `token`
+	// - `oauth`
+	// Defaults to `token`.
+	AuthMode *string `json:"authMode,omitempty" tf:"auth_mode,omitempty"`
+
+	// (String) Slug of an OAuth source used for authentication
+	// Slug of an OAuth source used for authentication
+	AuthOauth *string `json:"authOauth,omitempty" tf:"auth_oauth,omitempty"`
+
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+	AuthOauthParams *string `json:"authOauthParams,omitempty" tf:"auth_oauth_params,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `default`
 	// - `aws`
 	// - `slack`
+	// - `sfdc`
 	// Defaults to `default`.
 	CompatibilityMode *string `json:"compatibilityMode,omitempty" tf:"compatibility_mode,omitempty"`
 
@@ -30,8 +46,7 @@ type ProviderInitParameters struct {
 	// (Boolean)
 	ExcludeUsersServiceAccount *bool `json:"excludeUsersServiceAccount,omitempty" tf:"exclude_users_service_account,omitempty"`
 
-	// (String)
-	FilterGroup *string `json:"filterGroup,omitempty" tf:"filter_group,omitempty"`
+	GroupFilters []*string `json:"groupFilters,omitempty" tf:"group_filters,omitempty"`
 
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -60,8 +75,20 @@ type ProviderInitParameters struct {
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.Selector `json:"propertyMappingsSelector,omitempty" tf:"-"`
 
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+	ServiceProviderConfigCacheTimeout *string `json:"serviceProviderConfigCacheTimeout,omitempty" tf:"service_provider_config_cache_timeout,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
+
 	// (String, Sensitive)
-	TokenSecretRef v1.SecretKeySelector `json:"tokenSecretRef" tf:"-"`
+	TokenSecretRef *v1.SecretKeySelector `json:"tokenSecretRef,omitempty" tf:"-"`
 
 	// (String)
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
@@ -71,9 +98,25 @@ type ProviderObservation struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `token`
+	// - `oauth`
+	// Defaults to `token`.
+	AuthMode *string `json:"authMode,omitempty" tf:"auth_mode,omitempty"`
+
+	// (String) Slug of an OAuth source used for authentication
+	// Slug of an OAuth source used for authentication
+	AuthOauth *string `json:"authOauth,omitempty" tf:"auth_oauth,omitempty"`
+
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+	AuthOauthParams *string `json:"authOauthParams,omitempty" tf:"auth_oauth_params,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `default`
 	// - `aws`
 	// - `slack`
+	// - `sfdc`
 	// Defaults to `default`.
 	CompatibilityMode *string `json:"compatibilityMode,omitempty" tf:"compatibility_mode,omitempty"`
 
@@ -84,8 +127,7 @@ type ProviderObservation struct {
 	// (Boolean)
 	ExcludeUsersServiceAccount *bool `json:"excludeUsersServiceAccount,omitempty" tf:"exclude_users_service_account,omitempty"`
 
-	// (String)
-	FilterGroup *string `json:"filterGroup,omitempty" tf:"filter_group,omitempty"`
+	GroupFilters []*string `json:"groupFilters,omitempty" tf:"group_filters,omitempty"`
 
 	// (String) The ID of this resource.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -99,6 +141,18 @@ type ProviderObservation struct {
 	// (List of String)
 	PropertyMappingsGroup []*string `json:"propertyMappingsGroup,omitempty" tf:"property_mappings_group,omitempty"`
 
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+	ServiceProviderConfigCacheTimeout *string `json:"serviceProviderConfigCacheTimeout,omitempty" tf:"service_provider_config_cache_timeout,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
+
 	// (String)
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
@@ -107,9 +161,28 @@ type ProviderParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `token`
+	// - `oauth`
+	// Defaults to `token`.
+	// +kubebuilder:validation:Optional
+	AuthMode *string `json:"authMode,omitempty" tf:"auth_mode,omitempty"`
+
+	// (String) Slug of an OAuth source used for authentication
+	// Slug of an OAuth source used for authentication
+	// +kubebuilder:validation:Optional
+	AuthOauth *string `json:"authOauth,omitempty" tf:"auth_oauth,omitempty"`
+
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{}`.
+	// +kubebuilder:validation:Optional
+	AuthOauthParams *string `json:"authOauthParams,omitempty" tf:"auth_oauth_params,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `default`
 	// - `aws`
 	// - `slack`
+	// - `sfdc`
 	// Defaults to `default`.
 	// +kubebuilder:validation:Optional
 	CompatibilityMode *string `json:"compatibilityMode,omitempty" tf:"compatibility_mode,omitempty"`
@@ -123,9 +196,8 @@ type ProviderParameters struct {
 	// +kubebuilder:validation:Optional
 	ExcludeUsersServiceAccount *bool `json:"excludeUsersServiceAccount,omitempty" tf:"exclude_users_service_account,omitempty"`
 
-	// (String)
 	// +kubebuilder:validation:Optional
-	FilterGroup *string `json:"filterGroup,omitempty" tf:"filter_group,omitempty"`
+	GroupFilters []*string `json:"groupFilters,omitempty" tf:"group_filters,omitempty"`
 
 	// (String)
 	// +kubebuilder:validation:Optional
@@ -157,9 +229,24 @@ type ProviderParameters struct {
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.Selector `json:"propertyMappingsSelector,omitempty" tf:"-"`
 
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to hours=1.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `hours=1`.
+	// +kubebuilder:validation:Optional
+	ServiceProviderConfigCacheTimeout *string `json:"serviceProviderConfigCacheTimeout,omitempty" tf:"service_provider_config_cache_timeout,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	// +kubebuilder:validation:Optional
+	SyncPageSize *float64 `json:"syncPageSize,omitempty" tf:"sync_page_size,omitempty"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to minutes=30.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `minutes=30`.
+	// +kubebuilder:validation:Optional
+	SyncPageTimeout *string `json:"syncPageTimeout,omitempty" tf:"sync_page_timeout,omitempty"`
+
 	// (String, Sensitive)
 	// +kubebuilder:validation:Optional
-	TokenSecretRef v1.SecretKeySelector `json:"tokenSecretRef" tf:"-"`
+	TokenSecretRef *v1.SecretKeySelector `json:"tokenSecretRef,omitempty" tf:"-"`
 
 	// (String)
 	// +kubebuilder:validation:Optional
@@ -203,7 +290,6 @@ type Provider struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))",message="spec.forProvider.name is a required parameter"
-	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.tokenSecretRef)",message="spec.forProvider.tokenSecretRef is a required parameter"
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
 	Spec   ProviderSpec   `json:"spec"`
 	Status ProviderStatus `json:"status,omitempty"`

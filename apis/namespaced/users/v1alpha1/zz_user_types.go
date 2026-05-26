@@ -52,6 +52,10 @@ type UserInitParameters struct {
 	// Defaults to `users`.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
 
+	// (List of String) Generated.
+	// Generated.
+	Roles []*string `json:"roles,omitempty" tf:"roles,omitempty"`
+
 	// (String) Allowed values:
 	// Allowed values:
 	// - `internal`
@@ -92,6 +96,10 @@ type UserObservation struct {
 	// (String) Defaults to users.
 	// Defaults to `users`.
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
+
+	// (List of String) Generated.
+	// Generated.
+	Roles []*string `json:"roles,omitempty" tf:"roles,omitempty"`
 
 	// (String) Allowed values:
 	// Allowed values:
@@ -150,6 +158,11 @@ type UserParameters struct {
 	// Defaults to `users`.
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" tf:"path,omitempty"`
+
+	// (List of String) Generated.
+	// Generated.
+	// +kubebuilder:validation:Optional
+	Roles []*string `json:"roles,omitempty" tf:"roles,omitempty"`
 
 	// (String) Allowed values:
 	// Allowed values:

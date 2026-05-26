@@ -10,4 +10,5 @@ spec:
   forProvider:
     fieldKey: username
     label: Username
+    name: username
     type: username

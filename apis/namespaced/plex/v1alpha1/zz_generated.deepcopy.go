@@ -115,6 +115,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Slug != nil {
 		in, out := &in.Slug, &out.Slug
 		*out = new(string)
@@ -238,6 +243,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Slug != nil {
 		in, out := &in.Slug, &out.Slug
 		*out = new(string)
@@ -343,6 +353,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 	if in.PolicyEngineMode != nil {
 		in, out := &in.PolicyEngineMode, &out.PolicyEngineMode
 		*out = new(string)
+		**out = **in
+	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
 		**out = **in
 	}
 	if in.Slug != nil {

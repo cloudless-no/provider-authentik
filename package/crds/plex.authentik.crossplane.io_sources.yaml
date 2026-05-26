@@ -281,6 +281,11 @@ spec:
                       - `any`
                       Defaults to `any`.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   slug:
                     description: (String)
                     type: string
@@ -528,6 +533,11 @@ spec:
                       - `any`
                       Defaults to `any`.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   slug:
                     description: (String)
                     type: string
@@ -709,6 +719,11 @@ spec:
                       - `any`
                       Defaults to `any`.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   slug:
                     description: (String)
                     type: string

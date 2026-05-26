@@ -370,6 +370,11 @@ spec:
                             type: string
                         type: object
                     type: object
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -553,6 +558,16 @@ spec:
                       - `http://www.w3.org/2000/09/xmldsig#dsa-sha1`
                       Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
                     type: string
+                  signedAssertion:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
+                  signedResponse:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   signingKp:
                     description: (String)
                     type: string
@@ -906,6 +921,11 @@ spec:
                             type: string
                         type: object
                     type: object
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -1089,6 +1109,16 @@ spec:
                       - `http://www.w3.org/2000/09/xmldsig#dsa-sha1`
                       Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
                     type: string
+                  signedAssertion:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
+                  signedResponse:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   signingKp:
                     description: (String)
                     type: string
@@ -1319,6 +1349,11 @@ spec:
                   preAuthenticationFlow:
                     description: (String)
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -1344,6 +1379,16 @@ spec:
                       - `http://www.w3.org/2000/09/xmldsig#dsa-sha1`
                       Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
                     type: string
+                  signedAssertion:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
+                  signedResponse:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   signingKp:
                     description: (String)
                     type: string

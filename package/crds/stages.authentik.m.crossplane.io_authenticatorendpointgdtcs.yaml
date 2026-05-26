@@ -157,6 +157,7 @@ spec:
                     - name
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   name:
                     type: string
@@ -271,6 +272,7 @@ spec:
                     - name
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   name:
                     type: string
@@ -352,6 +354,7 @@ spec:
                   configureFlow:
                     type: string
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   id:
                     type: string

@@ -186,6 +186,13 @@ spec:
                       (String) Defaults to users.
                       Defaults to `users`.
                     type: string
+                  roles:
+                    description: |-
+                      (List of String) Generated.
+                      Generated.
+                    items:
+                      type: string
+                    type: array
                   type:
                     description: |-
                       (String) Allowed values:
@@ -341,6 +348,13 @@ spec:
                       (String) Defaults to users.
                       Defaults to `users`.
                     type: string
+                  roles:
+                    description: |-
+                      (List of String) Generated.
+                      Generated.
+                    items:
+                      type: string
+                    type: array
                   type:
                     description: |-
                       (String) Allowed values:
@@ -456,6 +470,13 @@ spec:
                       (String) Defaults to users.
                       Defaults to `users`.
                     type: string
+                  roles:
+                    description: |-
+                      (List of String) Generated.
+                      Generated.
+                    items:
+                      type: string
+                    type: array
                   type:
                     description: |-
                       (String) Allowed values:

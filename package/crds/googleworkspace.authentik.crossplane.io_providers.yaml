@@ -262,6 +262,13 @@ spec:
                             type: string
                         type: object
                     type: object
+                  syncPageSize:
+                    description: Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: 'Format: hours=1;minutes=2;seconds=3. Defaults to
+                      `minutes=30`.'
+                    type: string
                   userDeleteAction:
                     description: |-
                       Allowed values:
@@ -474,6 +481,13 @@ spec:
                             type: string
                         type: object
                     type: object
+                  syncPageSize:
+                    description: Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: 'Format: hours=1;minutes=2;seconds=3. Defaults to
+                      `minutes=30`.'
+                    type: string
                   userDeleteAction:
                     description: |-
                       Allowed values:
@@ -617,6 +631,13 @@ spec:
                     items:
                       type: string
                     type: array
+                  syncPageSize:
+                    description: Defaults to `100`.
+                    type: number
+                  syncPageTimeout:
+                    description: 'Format: hours=1;minutes=2;seconds=3. Defaults to
+                      `minutes=30`.'
+                    type: string
                   userDeleteAction:
                     description: |-
                       Allowed values:

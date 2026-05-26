@@ -37,6 +37,7 @@ type AuthenticatorSmsInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	FromNumber *string `json:"fromNumber,omitempty" tf:"from_number,omitempty"`
@@ -65,6 +66,7 @@ type AuthenticatorSmsObservation struct {
 
 	ConfigureFlow *string `json:"configureFlow,omitempty" tf:"configure_flow,omitempty"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	FromNumber *string `json:"fromNumber,omitempty" tf:"from_number,omitempty"`
@@ -115,6 +117,7 @@ type AuthenticatorSmsParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

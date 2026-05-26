@@ -14,12 +14,6 @@ import (
 )
 
 type InitialPermissionsInitParameters struct {
-
-	// Allowed values:
-	// - `user`
-	// - `role`
-	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
-
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	Permissions []*float64 `json:"permissions,omitempty" tf:"permissions,omitempty"`
@@ -39,11 +33,6 @@ type InitialPermissionsInitParameters struct {
 type InitialPermissionsObservation struct {
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
-	// Allowed values:
-	// - `user`
-	// - `role`
-	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
-
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	Permissions []*float64 `json:"permissions,omitempty" tf:"permissions,omitempty"`
@@ -52,12 +41,6 @@ type InitialPermissionsObservation struct {
 }
 
 type InitialPermissionsParameters struct {
-
-	// Allowed values:
-	// - `user`
-	// - `role`
-	// +kubebuilder:validation:Optional
-	Mode *string `json:"mode,omitempty" tf:"mode,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -114,7 +97,6 @@ type InitialPermissionsStatus struct {
 type InitialPermissions struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.mode) || (has(self.initProvider) && has(self.initProvider.mode))",message="spec.forProvider.mode is a required parameter"
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))",message="spec.forProvider.name is a required parameter"
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.permissions) || (has(self.initProvider) && has(self.initProvider.permissions))",message="spec.forProvider.permissions is a required parameter"
 	Spec   InitialPermissionsSpec   `json:"spec"`

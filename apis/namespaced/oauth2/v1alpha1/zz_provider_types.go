@@ -52,9 +52,6 @@ type ProviderInitParameters struct {
 	AuthorizationFlowSelector *v1.NamespacedSelector `json:"authorizationFlowSelector,omitempty" tf:"-"`
 
 	// (String)
-	BackchannelLogoutURI *string `json:"backchannelLogoutUri,omitempty" tf:"backchannel_logout_uri,omitempty"`
-
-	// (String)
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// (String, Sensitive) Generated.
@@ -115,6 +112,16 @@ type ProviderInitParameters struct {
 	// JWTs issued by keys configured in any of the selected sources can be used to authenticate on behalf of this provider.
 	JwtFederationSources []*string `json:"jwtFederationSources,omitempty" tf:"jwt_federation_sources,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `backchannel`
+	// - `frontchannel`
+	// Defaults to `backchannel`.
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
+	// (String)
+	LogoutURI *string `json:"logoutUri,omitempty" tf:"logout_uri,omitempty"`
+
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
@@ -129,6 +136,10 @@ type ProviderInitParameters struct {
 	// Selector for a list of SourcePropertyMapping in oauth to populate propertyMappings.
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.NamespacedSelector `json:"propertyMappingsSelector,omitempty" tf:"-"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+	RefreshTokenThreshold *string `json:"refreshTokenThreshold,omitempty" tf:"refresh_token_threshold,omitempty"`
 
 	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
 	// Format: hours=1;minutes=2;seconds=3. Defaults to `days=30`.
@@ -178,9 +189,6 @@ type ProviderObservation struct {
 	AuthorizationFlow *string `json:"authorizationFlow,omitempty" tf:"authorization_flow,omitempty"`
 
 	// (String)
-	BackchannelLogoutURI *string `json:"backchannelLogoutUri,omitempty" tf:"backchannel_logout_uri,omitempty"`
-
-	// (String)
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// (String) Allowed values:
@@ -222,11 +230,25 @@ type ProviderObservation struct {
 	// JWTs issued by keys configured in any of the selected sources can be used to authenticate on behalf of this provider.
 	JwtFederationSources []*string `json:"jwtFederationSources,omitempty" tf:"jwt_federation_sources,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `backchannel`
+	// - `frontchannel`
+	// Defaults to `backchannel`.
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
+	// (String)
+	LogoutURI *string `json:"logoutUri,omitempty" tf:"logout_uri,omitempty"`
+
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// (List of String)
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+	RefreshTokenThreshold *string `json:"refreshTokenThreshold,omitempty" tf:"refresh_token_threshold,omitempty"`
 
 	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
 	// Format: hours=1;minutes=2;seconds=3. Defaults to `days=30`.
@@ -291,10 +313,6 @@ type ProviderParameters struct {
 
 	// (String)
 	// +kubebuilder:validation:Optional
-	BackchannelLogoutURI *string `json:"backchannelLogoutUri,omitempty" tf:"backchannel_logout_uri,omitempty"`
-
-	// (String)
-	// +kubebuilder:validation:Optional
 	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
 
 	// (String, Sensitive) Generated.
@@ -364,6 +382,18 @@ type ProviderParameters struct {
 	// +kubebuilder:validation:Optional
 	JwtFederationSources []*string `json:"jwtFederationSources,omitempty" tf:"jwt_federation_sources,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `backchannel`
+	// - `frontchannel`
+	// Defaults to `backchannel`.
+	// +kubebuilder:validation:Optional
+	LogoutMethod *string `json:"logoutMethod,omitempty" tf:"logout_method,omitempty"`
+
+	// (String)
+	// +kubebuilder:validation:Optional
+	LogoutURI *string `json:"logoutUri,omitempty" tf:"logout_uri,omitempty"`
+
 	// (String)
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -380,6 +410,11 @@ type ProviderParameters struct {
 	// Selector for a list of SourcePropertyMapping in oauth to populate propertyMappings.
 	// +kubebuilder:validation:Optional
 	PropertyMappingsSelector *v1.NamespacedSelector `json:"propertyMappingsSelector,omitempty" tf:"-"`
+
+	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+	// Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+	// +kubebuilder:validation:Optional
+	RefreshTokenThreshold *string `json:"refreshTokenThreshold,omitempty" tf:"refresh_token_threshold,omitempty"`
 
 	// (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
 	// Format: hours=1;minutes=2;seconds=3. Defaults to `days=30`.

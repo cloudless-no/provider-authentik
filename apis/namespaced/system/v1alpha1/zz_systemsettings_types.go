@@ -44,8 +44,8 @@ type SystemSettingsInitParameters struct {
 	// Format: hours=1;minutes=2;seconds=3. Defaults to `days=365`.
 	EventRetention *string `json:"eventRetention,omitempty" tf:"event_retention,omitempty"`
 
-	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
 	Flags *string `json:"flags,omitempty" tf:"flags,omitempty"`
 
 	// (List of Map of String)
@@ -58,6 +58,14 @@ type SystemSettingsInitParameters struct {
 	// (Boolean) Defaults to true.
 	// Defaults to `true`.
 	Impersonation *bool `json:"impersonation,omitempty" tf:"impersonation,omitempty"`
+
+	// (Number) Defaults to 20.
+	// Defaults to `20`.
+	PaginationDefaultPageSize *float64 `json:"paginationDefaultPageSize,omitempty" tf:"pagination_default_page_size,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	PaginationMaxPageSize *float64 `json:"paginationMaxPageSize,omitempty" tf:"pagination_max_page_size,omitempty"`
 
 	// 5.
 	// Defaults to `-5`.
@@ -98,8 +106,8 @@ type SystemSettingsObservation struct {
 	// Format: hours=1;minutes=2;seconds=3. Defaults to `days=365`.
 	EventRetention *string `json:"eventRetention,omitempty" tf:"event_retention,omitempty"`
 
-	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
 	Flags *string `json:"flags,omitempty" tf:"flags,omitempty"`
 
 	// (List of Map of String)
@@ -115,6 +123,14 @@ type SystemSettingsObservation struct {
 	// (Boolean) Defaults to true.
 	// Defaults to `true`.
 	Impersonation *bool `json:"impersonation,omitempty" tf:"impersonation,omitempty"`
+
+	// (Number) Defaults to 20.
+	// Defaults to `20`.
+	PaginationDefaultPageSize *float64 `json:"paginationDefaultPageSize,omitempty" tf:"pagination_default_page_size,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	PaginationMaxPageSize *float64 `json:"paginationMaxPageSize,omitempty" tf:"pagination_max_page_size,omitempty"`
 
 	// 5.
 	// Defaults to `-5`.
@@ -162,8 +178,8 @@ type SystemSettingsParameters struct {
 	// +kubebuilder:validation:Optional
 	EventRetention *string `json:"eventRetention,omitempty" tf:"event_retention,omitempty"`
 
-	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+	// (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+	// JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
 	// +kubebuilder:validation:Optional
 	Flags *string `json:"flags,omitempty" tf:"flags,omitempty"`
 
@@ -180,6 +196,16 @@ type SystemSettingsParameters struct {
 	// Defaults to `true`.
 	// +kubebuilder:validation:Optional
 	Impersonation *bool `json:"impersonation,omitempty" tf:"impersonation,omitempty"`
+
+	// (Number) Defaults to 20.
+	// Defaults to `20`.
+	// +kubebuilder:validation:Optional
+	PaginationDefaultPageSize *float64 `json:"paginationDefaultPageSize,omitempty" tf:"pagination_default_page_size,omitempty"`
+
+	// (Number) Defaults to 100.
+	// Defaults to `100`.
+	// +kubebuilder:validation:Optional
+	PaginationMaxPageSize *float64 `json:"paginationMaxPageSize,omitempty" tf:"pagination_max_page_size,omitempty"`
 
 	// 5.
 	// Defaults to `-5`.

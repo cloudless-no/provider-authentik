@@ -291,6 +291,14 @@ spec:
                     - key
                     - name
                     type: object
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
+                    type: string
                   syncPasswordSecretRef:
                     description: Password to authenticate to kadmin for sync
                     properties:
@@ -577,6 +585,14 @@ spec:
                     - key
                     - name
                     type: object
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
+                    type: string
                   syncPasswordSecretRef:
                     description: Password to authenticate to kadmin for sync
                     properties:
@@ -741,6 +757,14 @@ spec:
                   syncCcache:
                     description: Credentials cache to authenticate to kadmin for sync.
                       Must be in the form TYPE:residual
+                    type: string
+                  syncOutgoingTriggerMode:
+                    description: |-
+                      Allowed values:
+                      - `none`
+                      - `immediate`
+                      - `deferred_end`
+                      Defaults to `deferred_end`.
                     type: string
                   syncPrincipal:
                     description: Principal to authenticate to kadmin for sync.

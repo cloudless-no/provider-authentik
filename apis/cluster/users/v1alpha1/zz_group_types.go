@@ -26,8 +26,8 @@ type GroupInitParameters struct {
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// (String)
-	Parent *string `json:"parent,omitempty" tf:"parent,omitempty"`
+	// (List of String)
+	Parents []*string `json:"parents,omitempty" tf:"parents,omitempty"`
 
 	// (List of String)
 	Roles []*string `json:"roles,omitempty" tf:"roles,omitempty"`
@@ -62,8 +62,8 @@ type GroupObservation struct {
 	// (String)
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// (String)
-	Parent *string `json:"parent,omitempty" tf:"parent,omitempty"`
+	// (List of String)
+	Parents []*string `json:"parents,omitempty" tf:"parents,omitempty"`
 
 	// (List of String)
 	Roles []*string `json:"roles,omitempty" tf:"roles,omitempty"`
@@ -89,9 +89,9 @@ type GroupParameters struct {
 	// +kubebuilder:validation:Optional
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
-	// (String)
+	// (List of String)
 	// +kubebuilder:validation:Optional
-	Parent *string `json:"parent,omitempty" tf:"parent,omitempty"`
+	Parents []*string `json:"parents,omitempty" tf:"parents,omitempty"`
 
 	// (List of String)
 	// +kubebuilder:validation:Optional

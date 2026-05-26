@@ -3,6 +3,7 @@ package saml
 import "github.com/crossplane/upjet/v2/pkg/config"
 
 const ShortGroup = "saml"
+const authentikFlow = "authentik_flow"
 
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
@@ -10,13 +11,13 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "Provider"
 		r.References["authorization_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["invalidation_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["authentication_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["property_mappings"] = config.Reference{
 			TerraformName: "authentik_property_mapping_provider_saml",
@@ -32,13 +33,13 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = ShortGroup
 		r.Kind = "Source"
 		r.References["pre_authentication_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["authentication_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["enrollment_flow"] = config.Reference{
-			TerraformName: "authentik_flow",
+			TerraformName: authentikFlow,
 		}
 		r.References["property_mappings"] = config.Reference{
 			TerraformName: "authentik_property_mapping_source_saml",

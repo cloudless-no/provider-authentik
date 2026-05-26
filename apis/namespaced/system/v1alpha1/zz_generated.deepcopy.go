@@ -880,6 +880,16 @@ func (in *SystemSettingsInitParameters) DeepCopyInto(out *SystemSettingsInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PaginationDefaultPageSize != nil {
+		in, out := &in.PaginationDefaultPageSize, &out.PaginationDefaultPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.PaginationMaxPageSize != nil {
+		in, out := &in.PaginationMaxPageSize, &out.PaginationMaxPageSize
+		*out = new(float64)
+		**out = **in
+	}
 	if in.ReputationLowerLimit != nil {
 		in, out := &in.ReputationLowerLimit, &out.ReputationLowerLimit
 		*out = new(float64)
@@ -1014,6 +1024,16 @@ func (in *SystemSettingsObservation) DeepCopyInto(out *SystemSettingsObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PaginationDefaultPageSize != nil {
+		in, out := &in.PaginationDefaultPageSize, &out.PaginationDefaultPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.PaginationMaxPageSize != nil {
+		in, out := &in.PaginationMaxPageSize, &out.PaginationMaxPageSize
+		*out = new(float64)
+		**out = **in
+	}
 	if in.ReputationLowerLimit != nil {
 		in, out := &in.ReputationLowerLimit, &out.ReputationLowerLimit
 		*out = new(float64)
@@ -1109,6 +1129,16 @@ func (in *SystemSettingsParameters) DeepCopyInto(out *SystemSettingsParameters) 
 	if in.Impersonation != nil {
 		in, out := &in.Impersonation, &out.Impersonation
 		*out = new(bool)
+		**out = **in
+	}
+	if in.PaginationDefaultPageSize != nil {
+		in, out := &in.PaginationDefaultPageSize, &out.PaginationDefaultPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.PaginationMaxPageSize != nil {
+		in, out := &in.PaginationMaxPageSize, &out.PaginationMaxPageSize
+		*out = new(float64)
 		**out = **in
 	}
 	if in.ReputationLowerLimit != nil {

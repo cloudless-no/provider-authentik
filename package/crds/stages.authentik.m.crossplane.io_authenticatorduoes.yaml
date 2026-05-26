@@ -175,7 +175,9 @@ spec:
                         type: object
                     type: object
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   name:
                     description: (String)
@@ -311,7 +313,9 @@ spec:
                         type: object
                     type: object
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   name:
                     description: (String)
@@ -411,7 +415,9 @@ spec:
                     description: (String)
                     type: string
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   id:
                     description: (String) The ID of this resource.

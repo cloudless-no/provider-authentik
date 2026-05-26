@@ -71,9 +71,11 @@ spec:
                   name:
                     description: (String)
                     type: string
-                  parent:
-                    description: (String)
-                    type: string
+                  parents:
+                    description: (List of String)
+                    items:
+                      type: string
+                    type: array
                   roles:
                     description: (List of String)
                     items:
@@ -197,9 +199,11 @@ spec:
                   name:
                     description: (String)
                     type: string
-                  parent:
-                    description: (String)
-                    type: string
+                  parents:
+                    description: (List of String)
+                    items:
+                      type: string
+                    type: array
                   roles:
                     description: (List of String)
                     items:
@@ -381,9 +385,11 @@ spec:
                   name:
                     description: (String)
                     type: string
-                  parent:
-                    description: (String)
-                    type: string
+                  parents:
+                    description: (List of String)
+                    items:
+                      type: string
+                    type: array
                   roles:
                     description: (List of String)
                     items:

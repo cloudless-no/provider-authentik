@@ -27,7 +27,8 @@ type AuthenticatorStaticInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (String)
@@ -47,7 +48,8 @@ type AuthenticatorStaticObservation struct {
 	// (String)
 	ConfigureFlow *string `json:"configureFlow,omitempty" tf:"configure_flow,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (String) The ID of this resource.
@@ -80,7 +82,8 @@ type AuthenticatorStaticParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

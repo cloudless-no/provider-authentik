@@ -112,6 +112,10 @@ type SourceInitParameters struct {
 	// +kubebuilder:validation:Optional
 	PreAuthenticationFlowSelector *v1.NamespacedSelector `json:"preAuthenticationFlowSelector,omitempty" tf:"-"`
 
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
+
 	// (List of String)
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/saml/v1alpha1.SourcePropertyMapping
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
@@ -152,6 +156,14 @@ type SourceInitParameters struct {
 	// - `http://www.w3.org/2000/09/xmldsig#dsa-sha1`
 	// Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
 	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" tf:"signature_algorithm,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	SignedAssertion *bool `json:"signedAssertion,omitempty" tf:"signed_assertion,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	SignedResponse *bool `json:"signedResponse,omitempty" tf:"signed_response,omitempty"`
 
 	// (String)
 	SigningKp *string `json:"signingKp,omitempty" tf:"signing_kp,omitempty"`
@@ -266,6 +278,10 @@ type SourceObservation struct {
 	// (String)
 	PreAuthenticationFlow *string `json:"preAuthenticationFlow,omitempty" tf:"pre_authentication_flow,omitempty"`
 
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
+
 	// (List of String)
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
 
@@ -288,6 +304,14 @@ type SourceObservation struct {
 	// - `http://www.w3.org/2000/09/xmldsig#dsa-sha1`
 	// Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
 	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" tf:"signature_algorithm,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	SignedAssertion *bool `json:"signedAssertion,omitempty" tf:"signed_assertion,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	SignedResponse *bool `json:"signedResponse,omitempty" tf:"signed_response,omitempty"`
 
 	// (String)
 	SigningKp *string `json:"signingKp,omitempty" tf:"signing_kp,omitempty"`
@@ -435,6 +459,11 @@ type SourceParameters struct {
 	// +kubebuilder:validation:Optional
 	PreAuthenticationFlowSelector *v1.NamespacedSelector `json:"preAuthenticationFlowSelector,omitempty" tf:"-"`
 
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
+
 	// (List of String)
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/saml/v1alpha1.SourcePropertyMapping
 	// +kubebuilder:validation:Optional
@@ -479,6 +508,16 @@ type SourceParameters struct {
 	// Defaults to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`.
 	// +kubebuilder:validation:Optional
 	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" tf:"signature_algorithm,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	SignedAssertion *bool `json:"signedAssertion,omitempty" tf:"signed_assertion,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	SignedResponse *bool `json:"signedResponse,omitempty" tf:"signed_response,omitempty"`
 
 	// (String)
 	// +kubebuilder:validation:Optional

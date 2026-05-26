@@ -155,7 +155,9 @@ spec:
                       type: string
                     type: array
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   maxAttempts:
                     description: (Number)
@@ -291,7 +293,9 @@ spec:
                       type: string
                     type: array
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   maxAttempts:
                     description: (Number)
@@ -403,7 +407,9 @@ spec:
                       type: string
                     type: array
                   friendlyName:
-                    description: (String)
+                    description: |-
+                      (String) Defaults to “.
+                      Defaults to “.
                     type: string
                   id:
                     description: (String) The ID of this resource.

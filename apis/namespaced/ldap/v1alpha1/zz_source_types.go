@@ -106,6 +106,14 @@ type SourceInitParameters struct {
 	// Defaults to `true`.
 	SyncGroups *bool `json:"syncGroups,omitempty" tf:"sync_groups,omitempty"`
 
+	// (String) Allowed values:
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
+
 	// (String)
 	SyncParentGroup *string `json:"syncParentGroup,omitempty" tf:"sync_parent_group,omitempty"`
 
@@ -207,6 +215,14 @@ type SourceObservation struct {
 	// (Boolean) Defaults to true.
 	// Defaults to `true`.
 	SyncGroups *bool `json:"syncGroups,omitempty" tf:"sync_groups,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
 
 	// (String)
 	SyncParentGroup *string `json:"syncParentGroup,omitempty" tf:"sync_parent_group,omitempty"`
@@ -347,6 +363,15 @@ type SourceParameters struct {
 	// Defaults to `true`.
 	// +kubebuilder:validation:Optional
 	SyncGroups *bool `json:"syncGroups,omitempty" tf:"sync_groups,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	// +kubebuilder:validation:Optional
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
 
 	// (String)
 	// +kubebuilder:validation:Optional

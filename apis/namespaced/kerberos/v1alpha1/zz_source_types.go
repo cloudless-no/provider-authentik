@@ -82,6 +82,13 @@ type SourceInitParameters struct {
 	// Keytab to authenticate to kadmin for sync. Must be base64-encoded or in the form TYPE:residual
 	SyncKeytabSecretRef *v1.LocalSecretKeySelector `json:"syncKeytabSecretRef,omitempty" tf:"-"`
 
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
+
 	// Password to authenticate to kadmin for sync
 	SyncPasswordSecretRef *v1.LocalSecretKeySelector `json:"syncPasswordSecretRef,omitempty" tf:"-"`
 
@@ -154,6 +161,13 @@ type SourceObservation struct {
 
 	// Credentials cache to authenticate to kadmin for sync. Must be in the form TYPE:residual
 	SyncCcache *string `json:"syncCcache,omitempty" tf:"sync_ccache,omitempty"`
+
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
 
 	// Principal to authenticate to kadmin for sync.
 	SyncPrincipal *string `json:"syncPrincipal,omitempty" tf:"sync_principal,omitempty"`
@@ -262,6 +276,14 @@ type SourceParameters struct {
 	// Keytab to authenticate to kadmin for sync. Must be base64-encoded or in the form TYPE:residual
 	// +kubebuilder:validation:Optional
 	SyncKeytabSecretRef *v1.LocalSecretKeySelector `json:"syncKeytabSecretRef,omitempty" tf:"-"`
+
+	// Allowed values:
+	// - `none`
+	// - `immediate`
+	// - `deferred_end`
+	// Defaults to `deferred_end`.
+	// +kubebuilder:validation:Optional
+	SyncOutgoingTriggerMode *string `json:"syncOutgoingTriggerMode,omitempty" tf:"sync_outgoing_trigger_mode,omitempty"`
 
 	// Password to authenticate to kadmin for sync
 	// +kubebuilder:validation:Optional

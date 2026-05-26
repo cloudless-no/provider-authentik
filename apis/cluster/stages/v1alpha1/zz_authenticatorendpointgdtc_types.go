@@ -28,6 +28,7 @@ type AuthenticatorEndpointGdtcInitParameters struct {
 
 	CredentialsSecretRef v1.SecretKeySelector `json:"credentialsSecretRef" tf:"-"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
@@ -36,6 +37,7 @@ type AuthenticatorEndpointGdtcInitParameters struct {
 type AuthenticatorEndpointGdtcObservation struct {
 	ConfigureFlow *string `json:"configureFlow,omitempty" tf:"configure_flow,omitempty"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -60,6 +62,7 @@ type AuthenticatorEndpointGdtcParameters struct {
 	// +kubebuilder:validation:Optional
 	CredentialsSecretRef v1.SecretKeySelector `json:"credentialsSecretRef" tf:"-"`
 
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

@@ -95,8 +95,8 @@ spec:
                     type: string
                   flags:
                     description: |-
-                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
                     type: string
                   footerLinks:
                     description: (List of Map of String)
@@ -115,6 +115,16 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  paginationDefaultPageSize:
+                    description: |-
+                      (Number) Defaults to 20.
+                      Defaults to `20`.
+                    type: number
+                  paginationMaxPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
                   reputationLowerLimit:
                     description: |-
                       5.
@@ -176,8 +186,8 @@ spec:
                     type: string
                   flags:
                     description: |-
-                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
                     type: string
                   footerLinks:
                     description: (List of Map of String)
@@ -196,6 +206,16 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  paginationDefaultPageSize:
+                    description: |-
+                      (Number) Defaults to 20.
+                      Defaults to `20`.
+                    type: number
+                  paginationMaxPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
                   reputationLowerLimit:
                     description: |-
                       5.
@@ -307,8 +327,8 @@ spec:
                     type: string
                   flags:
                     description: |-
-                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"policies_buffered_access_view": false}.
-                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"policies_buffered_access_view": false}`.
+                      (String) JSON format expected. Use jsonencode() to pass objects. Defaults to {"flows_refresh_others":false,"policies_buffered_access_view":false}.
+                      JSON format expected. Use `jsonencode()` to pass objects. Defaults to `{"enterprise_audit_include_expanded_diff":false,"flows_continuous_login":false,"flows_refresh_others":false,"policies_buffered_access_view":false}`.
                     type: string
                   footerLinks:
                     description: (List of Map of String)
@@ -330,6 +350,16 @@ spec:
                       (Boolean) Defaults to true.
                       Defaults to `true`.
                     type: boolean
+                  paginationDefaultPageSize:
+                    description: |-
+                      (Number) Defaults to 20.
+                      Defaults to `20`.
+                    type: number
+                  paginationMaxPageSize:
+                    description: |-
+                      (Number) Defaults to 100.
+                      Defaults to `100`.
+                    type: number
                   reputationLowerLimit:
                     description: |-
                       5.

@@ -24,6 +24,12 @@ type PermissionUserInitParameters struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -80,6 +86,10 @@ type PermissionUserInitParameters struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -95,7 +105,6 @@ type PermissionUserInitParameters struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -113,12 +122,18 @@ type PermissionUserInitParameters struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`
@@ -157,6 +172,12 @@ type PermissionUserObservation struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -213,6 +234,10 @@ type PermissionUserObservation struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -228,7 +253,6 @@ type PermissionUserObservation struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -246,12 +270,18 @@ type PermissionUserObservation struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`
@@ -278,6 +308,12 @@ type PermissionUserParameters struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -334,6 +370,10 @@ type PermissionUserParameters struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -349,7 +389,6 @@ type PermissionUserParameters struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -367,12 +406,18 @@ type PermissionUserParameters struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`
@@ -428,7 +473,7 @@ type PermissionUserStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// PermissionUser is the Schema for the PermissionUsers API.
+// PermissionUser is the Schema for the PermissionUsers API. ~> This resource is deprecated. Migrate to authentik_rbac_permission_role.
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"

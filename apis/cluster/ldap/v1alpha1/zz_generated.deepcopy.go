@@ -524,6 +524,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
+		**out = **in
+	}
 	if in.SyncParentGroup != nil {
 		in, out := &in.SyncParentGroup, &out.SyncParentGroup
 		*out = new(string)
@@ -718,6 +723,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
+		**out = **in
+	}
 	if in.SyncParentGroup != nil {
 		in, out := &in.SyncParentGroup, &out.SyncParentGroup
 		*out = new(string)
@@ -898,6 +908,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 	if in.SyncGroups != nil {
 		in, out := &in.SyncGroups, &out.SyncGroups
 		*out = new(bool)
+		**out = **in
+	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
 		**out = **in
 	}
 	if in.SyncParentGroup != nil {

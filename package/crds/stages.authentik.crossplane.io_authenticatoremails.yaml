@@ -150,6 +150,7 @@ spec:
                         type: object
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromAddress:
                     description: Defaults to `system@authentik.local`.
@@ -293,6 +294,7 @@ spec:
                         type: object
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromAddress:
                     description: Defaults to `system@authentik.local`.
@@ -445,6 +447,7 @@ spec:
                   configureFlow:
                     type: string
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromAddress:
                     description: Defaults to `system@authentik.local`.

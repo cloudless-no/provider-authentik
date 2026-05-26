@@ -105,11 +105,6 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.BackchannelLogoutURI != nil {
-		in, out := &in.BackchannelLogoutURI, &out.BackchannelLogoutURI
-		*out = new(string)
-		**out = **in
-	}
 	if in.ClientID != nil {
 		in, out := &in.ClientID, &out.ClientID
 		*out = new(string)
@@ -200,6 +195,16 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 			}
 		}
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
+	if in.LogoutURI != nil {
+		in, out := &in.LogoutURI, &out.LogoutURI
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -227,6 +232,11 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		in, out := &in.PropertyMappingsSelector, &out.PropertyMappingsSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
+	}
+	if in.RefreshTokenThreshold != nil {
+		in, out := &in.RefreshTokenThreshold, &out.RefreshTokenThreshold
+		*out = new(string)
+		**out = **in
 	}
 	if in.RefreshTokenValidity != nil {
 		in, out := &in.RefreshTokenValidity, &out.RefreshTokenValidity
@@ -342,11 +352,6 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.BackchannelLogoutURI != nil {
-		in, out := &in.BackchannelLogoutURI, &out.BackchannelLogoutURI
-		*out = new(string)
-		**out = **in
-	}
 	if in.ClientID != nil {
 		in, out := &in.ClientID, &out.ClientID
 		*out = new(string)
@@ -415,6 +420,16 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 			}
 		}
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
+	if in.LogoutURI != nil {
+		in, out := &in.LogoutURI, &out.LogoutURI
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -430,6 +445,11 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 				**out = **in
 			}
 		}
+	}
+	if in.RefreshTokenThreshold != nil {
+		in, out := &in.RefreshTokenThreshold, &out.RefreshTokenThreshold
+		*out = new(string)
+		**out = **in
 	}
 	if in.RefreshTokenValidity != nil {
 		in, out := &in.RefreshTokenValidity, &out.RefreshTokenValidity
@@ -523,11 +543,6 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.BackchannelLogoutURI != nil {
-		in, out := &in.BackchannelLogoutURI, &out.BackchannelLogoutURI
-		*out = new(string)
-		**out = **in
-	}
 	if in.ClientID != nil {
 		in, out := &in.ClientID, &out.ClientID
 		*out = new(string)
@@ -618,6 +633,16 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 			}
 		}
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
+	if in.LogoutURI != nil {
+		in, out := &in.LogoutURI, &out.LogoutURI
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -645,6 +670,11 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		in, out := &in.PropertyMappingsSelector, &out.PropertyMappingsSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
+	}
+	if in.RefreshTokenThreshold != nil {
+		in, out := &in.RefreshTokenThreshold, &out.RefreshTokenThreshold
+		*out = new(string)
+		**out = **in
 	}
 	if in.RefreshTokenValidity != nil {
 		in, out := &in.RefreshTokenValidity, &out.RefreshTokenValidity

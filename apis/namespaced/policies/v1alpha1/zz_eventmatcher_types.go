@@ -21,14 +21,18 @@ type EventMatcherInitParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `authentik.commands`
 	// - `authentik.tenants`
 	// - `authentik.tasks`
 	// - `authentik.admin`
 	// - `authentik.api`
 	// - `authentik.core`
 	// - `authentik.crypto`
+	// - `authentik.endpoints`
+	// - `authentik.endpoints.connectors.agent`
 	// - `authentik.enterprise`
 	// - `authentik.events`
+	// - `authentik.admin.files`
 	// - `authentik.flows`
 	// - `authentik.outposts`
 	// - `authentik.policies.dummy`
@@ -54,6 +58,7 @@ type EventMatcherInitParameters struct {
 	// - `authentik.sources.plex`
 	// - `authentik.sources.saml`
 	// - `authentik.sources.scim`
+	// - `authentik.sources.telegram`
 	// - `authentik.stages.authenticator`
 	// - `authentik.stages.authenticator_duo`
 	// - `authentik.stages.authenticator_email`
@@ -80,10 +85,17 @@ type EventMatcherInitParameters struct {
 	// - `authentik.brands`
 	// - `authentik.blueprints`
 	// - `authentik.enterprise.audit`
+	// - `authentik.enterprise.endpoints.connectors.agent`
+	// - `authentik.enterprise.endpoints.connectors.fleet`
+	// - `authentik.enterprise.lifecycle`
 	// - `authentik.enterprise.policies.unique_password`
 	// - `authentik.enterprise.providers.google_workspace`
 	// - `authentik.enterprise.providers.microsoft_entra`
+	// - `authentik.enterprise.providers.radius`
+	// - `authentik.enterprise.providers.scim`
 	// - `authentik.enterprise.providers.ssf`
+	// - `authentik.enterprise.providers.ws_federation`
+	// - `authentik.enterprise.reports`
 	// - `authentik.enterprise.search`
 	// - `authentik.enterprise.stages.authenticator_endpoint_gdtc`
 	// - `authentik.enterprise.stages.mtls`
@@ -106,6 +118,12 @@ type EventMatcherInitParameters struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -162,6 +180,10 @@ type EventMatcherInitParameters struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -177,7 +199,6 @@ type EventMatcherInitParameters struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -195,12 +216,18 @@ type EventMatcherInitParameters struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`
@@ -217,14 +244,18 @@ type EventMatcherObservation struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `authentik.commands`
 	// - `authentik.tenants`
 	// - `authentik.tasks`
 	// - `authentik.admin`
 	// - `authentik.api`
 	// - `authentik.core`
 	// - `authentik.crypto`
+	// - `authentik.endpoints`
+	// - `authentik.endpoints.connectors.agent`
 	// - `authentik.enterprise`
 	// - `authentik.events`
+	// - `authentik.admin.files`
 	// - `authentik.flows`
 	// - `authentik.outposts`
 	// - `authentik.policies.dummy`
@@ -250,6 +281,7 @@ type EventMatcherObservation struct {
 	// - `authentik.sources.plex`
 	// - `authentik.sources.saml`
 	// - `authentik.sources.scim`
+	// - `authentik.sources.telegram`
 	// - `authentik.stages.authenticator`
 	// - `authentik.stages.authenticator_duo`
 	// - `authentik.stages.authenticator_email`
@@ -276,10 +308,17 @@ type EventMatcherObservation struct {
 	// - `authentik.brands`
 	// - `authentik.blueprints`
 	// - `authentik.enterprise.audit`
+	// - `authentik.enterprise.endpoints.connectors.agent`
+	// - `authentik.enterprise.endpoints.connectors.fleet`
+	// - `authentik.enterprise.lifecycle`
 	// - `authentik.enterprise.policies.unique_password`
 	// - `authentik.enterprise.providers.google_workspace`
 	// - `authentik.enterprise.providers.microsoft_entra`
+	// - `authentik.enterprise.providers.radius`
+	// - `authentik.enterprise.providers.scim`
 	// - `authentik.enterprise.providers.ssf`
+	// - `authentik.enterprise.providers.ws_federation`
+	// - `authentik.enterprise.reports`
 	// - `authentik.enterprise.search`
 	// - `authentik.enterprise.stages.authenticator_endpoint_gdtc`
 	// - `authentik.enterprise.stages.mtls`
@@ -305,6 +344,12 @@ type EventMatcherObservation struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -361,6 +406,10 @@ type EventMatcherObservation struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -376,7 +425,6 @@ type EventMatcherObservation struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -394,12 +442,18 @@ type EventMatcherObservation struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`
@@ -417,14 +471,18 @@ type EventMatcherParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `authentik.commands`
 	// - `authentik.tenants`
 	// - `authentik.tasks`
 	// - `authentik.admin`
 	// - `authentik.api`
 	// - `authentik.core`
 	// - `authentik.crypto`
+	// - `authentik.endpoints`
+	// - `authentik.endpoints.connectors.agent`
 	// - `authentik.enterprise`
 	// - `authentik.events`
+	// - `authentik.admin.files`
 	// - `authentik.flows`
 	// - `authentik.outposts`
 	// - `authentik.policies.dummy`
@@ -450,6 +508,7 @@ type EventMatcherParameters struct {
 	// - `authentik.sources.plex`
 	// - `authentik.sources.saml`
 	// - `authentik.sources.scim`
+	// - `authentik.sources.telegram`
 	// - `authentik.stages.authenticator`
 	// - `authentik.stages.authenticator_duo`
 	// - `authentik.stages.authenticator_email`
@@ -476,10 +535,17 @@ type EventMatcherParameters struct {
 	// - `authentik.brands`
 	// - `authentik.blueprints`
 	// - `authentik.enterprise.audit`
+	// - `authentik.enterprise.endpoints.connectors.agent`
+	// - `authentik.enterprise.endpoints.connectors.fleet`
+	// - `authentik.enterprise.lifecycle`
 	// - `authentik.enterprise.policies.unique_password`
 	// - `authentik.enterprise.providers.google_workspace`
 	// - `authentik.enterprise.providers.microsoft_entra`
+	// - `authentik.enterprise.providers.radius`
+	// - `authentik.enterprise.providers.scim`
 	// - `authentik.enterprise.providers.ssf`
+	// - `authentik.enterprise.providers.ws_federation`
+	// - `authentik.enterprise.reports`
 	// - `authentik.enterprise.search`
 	// - `authentik.enterprise.stages.authenticator_endpoint_gdtc`
 	// - `authentik.enterprise.stages.mtls`
@@ -505,6 +571,12 @@ type EventMatcherParameters struct {
 	// - `authentik_core.applicationentitlement`
 	// - `authentik_core.token`
 	// - `authentik_crypto.certificatekeypair`
+	// - `authentik_endpoints.deviceuserbinding`
+	// - `authentik_endpoints.deviceaccessgroup`
+	// - `authentik_endpoints.endpointstage`
+	// - `authentik_endpoints_connectors_agent.agentconnector`
+	// - `authentik_endpoints_connectors_agent.agentdeviceuserbinding`
+	// - `authentik_endpoints_connectors_agent.enrollmenttoken`
 	// - `authentik_enterprise.license`
 	// - `authentik_events.event`
 	// - `authentik_events.notificationtransport`
@@ -561,6 +633,10 @@ type EventMatcherParameters struct {
 	// - `authentik_sources_saml.groupsamlsourceconnection`
 	// - `authentik_sources_scim.scimsource`
 	// - `authentik_sources_scim.scimsourcepropertymapping`
+	// - `authentik_sources_telegram.telegramsource`
+	// - `authentik_sources_telegram.telegramsourcepropertymapping`
+	// - `authentik_sources_telegram.usertelegramsourceconnection`
+	// - `authentik_sources_telegram.grouptelegramsourceconnection`
 	// - `authentik_stages_authenticator_duo.authenticatorduostage`
 	// - `authentik_stages_authenticator_duo.duodevice`
 	// - `authentik_stages_authenticator_email.authenticatoremailstage`
@@ -576,7 +652,6 @@ type EventMatcherParameters struct {
 	// - `authentik_stages_authenticator_webauthn.webauthndevice`
 	// - `authentik_stages_captcha.captchastage`
 	// - `authentik_stages_consent.consentstage`
-	// - `authentik_stages_consent.userconsent`
 	// - `authentik_stages_deny.denystage`
 	// - `authentik_stages_dummy.dummystage`
 	// - `authentik_stages_email.emailstage`
@@ -594,12 +669,18 @@ type EventMatcherParameters struct {
 	// - `authentik_tasks_schedules.schedule`
 	// - `authentik_brands.brand`
 	// - `authentik_blueprints.blueprintinstance`
+	// - `authentik_endpoints_connectors_fleet.fleetconnector`
+	// - `authentik_lifecycle.lifecyclerule`
+	// - `authentik_lifecycle.lifecycleiteration`
+	// - `authentik_lifecycle.review`
 	// - `authentik_policies_unique_password.uniquepasswordpolicy`
 	// - `authentik_providers_google_workspace.googleworkspaceprovider`
 	// - `authentik_providers_google_workspace.googleworkspaceprovidermapping`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovider`
 	// - `authentik_providers_microsoft_entra.microsoftentraprovidermapping`
 	// - `authentik_providers_ssf.ssfprovider`
+	// - `authentik_providers_ws_federation.wsfederationprovider`
+	// - `authentik_reports.dataexport`
 	// - `authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage`
 	// - `authentik_stages_mtls.mutualtlsstage`
 	// - `authentik_stages_source.sourcestage`

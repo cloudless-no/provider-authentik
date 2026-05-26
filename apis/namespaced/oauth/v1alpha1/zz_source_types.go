@@ -80,7 +80,7 @@ type SourceInitParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
 	OidcJwks *string `json:"oidcJwks,omitempty" tf:"oidc_jwks,omitempty"`
 
 	// (String) Automatically configure JWKS if not specified by oidc_well_known_url.
@@ -93,6 +93,14 @@ type SourceInitParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `none`
+	// - `plain`
+	// - `S256`
+	// Defaults to `none`.
+	Pkce *string `json:"pkce,omitempty" tf:"pkce,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `all`
 	// - `any`
 	// Defaults to `any`.
@@ -101,6 +109,10 @@ type SourceInitParameters struct {
 	// (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
 	// Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
 	ProfileURL *string `json:"profileUrl,omitempty" tf:"profile_url,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
 
 	// (List of String)
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/oauth/v1alpha1.SourcePropertyMapping
@@ -141,8 +153,10 @@ type SourceInitParameters struct {
 	// - `okta`
 	// - `patreon`
 	// - `reddit`
+	// - `slack`
 	// - `twitch`
 	// - `twitter`
+	// - `wechat`
 	ProviderType *string `json:"providerType,omitempty" tf:"provider_type,omitempty"`
 
 	// (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
@@ -223,7 +237,7 @@ type SourceObservation struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
 	OidcJwks *string `json:"oidcJwks,omitempty" tf:"oidc_jwks,omitempty"`
 
 	// (String) Automatically configure JWKS if not specified by oidc_well_known_url.
@@ -236,6 +250,14 @@ type SourceObservation struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `none`
+	// - `plain`
+	// - `S256`
+	// Defaults to `none`.
+	Pkce *string `json:"pkce,omitempty" tf:"pkce,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `all`
 	// - `any`
 	// Defaults to `any`.
@@ -244,6 +266,10 @@ type SourceObservation struct {
 	// (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
 	// Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
 	ProfileURL *string `json:"profileUrl,omitempty" tf:"profile_url,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
 
 	// (List of String)
 	PropertyMappings []*string `json:"propertyMappings,omitempty" tf:"property_mappings,omitempty"`
@@ -266,8 +292,10 @@ type SourceObservation struct {
 	// - `okta`
 	// - `patreon`
 	// - `reddit`
+	// - `slack`
 	// - `twitch`
 	// - `twitter`
+	// - `wechat`
 	ProviderType *string `json:"providerType,omitempty" tf:"provider_type,omitempty"`
 
 	// (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
@@ -373,7 +401,7 @@ type SourceParameters struct {
 	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 
 	// to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+	// Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
 	// +kubebuilder:validation:Optional
 	OidcJwks *string `json:"oidcJwks,omitempty" tf:"oidc_jwks,omitempty"`
 
@@ -389,6 +417,15 @@ type SourceParameters struct {
 
 	// (String) Allowed values:
 	// Allowed values:
+	// - `none`
+	// - `plain`
+	// - `S256`
+	// Defaults to `none`.
+	// +kubebuilder:validation:Optional
+	Pkce *string `json:"pkce,omitempty" tf:"pkce,omitempty"`
+
+	// (String) Allowed values:
+	// Allowed values:
 	// - `all`
 	// - `any`
 	// Defaults to `any`.
@@ -399,6 +436,11 @@ type SourceParameters struct {
 	// Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
 	// +kubebuilder:validation:Optional
 	ProfileURL *string `json:"profileUrl,omitempty" tf:"profile_url,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
 
 	// (List of String)
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/oauth/v1alpha1.SourcePropertyMapping
@@ -441,8 +483,10 @@ type SourceParameters struct {
 	// - `okta`
 	// - `patreon`
 	// - `reddit`
+	// - `slack`
 	// - `twitch`
 	// - `twitter`
+	// - `wechat`
 	// +kubebuilder:validation:Optional
 	ProviderType *string `json:"providerType,omitempty" tf:"provider_type,omitempty"`
 

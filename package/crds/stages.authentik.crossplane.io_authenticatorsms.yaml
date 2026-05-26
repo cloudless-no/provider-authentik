@@ -211,6 +211,7 @@ spec:
                         type: object
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromNumber:
                     type: string
@@ -380,6 +381,7 @@ spec:
                         type: object
                     type: object
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromNumber:
                     type: string
@@ -517,6 +519,7 @@ spec:
                   configureFlow:
                     type: string
                   friendlyName:
+                    description: Defaults to “.
                     type: string
                   fromNumber:
                     type: string

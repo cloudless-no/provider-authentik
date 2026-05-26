@@ -129,6 +129,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Pkce != nil {
+		in, out := &in.Pkce, &out.Pkce
+		*out = new(string)
+		**out = **in
+	}
 	if in.PolicyEngineMode != nil {
 		in, out := &in.PolicyEngineMode, &out.PolicyEngineMode
 		*out = new(string)
@@ -137,6 +142,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 	if in.ProfileURL != nil {
 		in, out := &in.ProfileURL, &out.ProfileURL
 		*out = new(string)
+		**out = **in
+	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
 		**out = **in
 	}
 	if in.PropertyMappings != nil {
@@ -337,6 +347,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Pkce != nil {
+		in, out := &in.Pkce, &out.Pkce
+		*out = new(string)
+		**out = **in
+	}
 	if in.PolicyEngineMode != nil {
 		in, out := &in.PolicyEngineMode, &out.PolicyEngineMode
 		*out = new(string)
@@ -345,6 +360,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 	if in.ProfileURL != nil {
 		in, out := &in.ProfileURL, &out.ProfileURL
 		*out = new(string)
+		**out = **in
+	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
 		**out = **in
 	}
 	if in.PropertyMappings != nil {
@@ -500,6 +520,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Pkce != nil {
+		in, out := &in.Pkce, &out.Pkce
+		*out = new(string)
+		**out = **in
+	}
 	if in.PolicyEngineMode != nil {
 		in, out := &in.PolicyEngineMode, &out.PolicyEngineMode
 		*out = new(string)
@@ -508,6 +533,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 	if in.ProfileURL != nil {
 		in, out := &in.ProfileURL, &out.ProfileURL
 		*out = new(string)
+		**out = **in
+	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
 		**out = **in
 	}
 	if in.PropertyMappings != nil {

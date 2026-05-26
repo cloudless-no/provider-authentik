@@ -26,6 +26,7 @@ type AuthenticatorEmailInitParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// Defaults to `system@authentik.local`.
@@ -66,6 +67,7 @@ type AuthenticatorEmailInitParameters struct {
 type AuthenticatorEmailObservation struct {
 	ConfigureFlow *string `json:"configureFlow,omitempty" tf:"configure_flow,omitempty"`
 
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// Defaults to `system@authentik.local`.
@@ -117,6 +119,7 @@ type AuthenticatorEmailParameters struct {
 	// +kubebuilder:validation:Optional
 	ConfigureFlowSelector *v1.Selector `json:"configureFlowSelector,omitempty" tf:"-"`
 
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

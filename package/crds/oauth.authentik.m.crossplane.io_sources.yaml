@@ -280,7 +280,7 @@ spec:
                   oidcJwks:
                     description: |-
                       to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
                     type: string
                   oidcJwksUrl:
                     description: |-
@@ -291,6 +291,15 @@ spec:
                     description: |-
                       known endpoint. URL is taken as is, and should end with .well-known/openid-configuration.
                       Automatically configure source from OIDC well-known endpoint. URL is taken as is, and should end with `.well-known/openid-configuration`.
+                    type: string
+                  pkce:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `plain`
+                      - `S256`
+                      Defaults to `none`.
                     type: string
                   policyEngineMode:
                     description: |-
@@ -305,6 +314,11 @@ spec:
                       (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
                       Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -502,8 +516,10 @@ spec:
                       - `okta`
                       - `patreon`
                       - `reddit`
+                      - `slack`
                       - `twitch`
                       - `twitter`
+                      - `wechat`
                     type: string
                   requestTokenUrl:
                     description: |-
@@ -770,7 +786,7 @@ spec:
                   oidcJwks:
                     description: |-
                       to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
                     type: string
                   oidcJwksUrl:
                     description: |-
@@ -781,6 +797,15 @@ spec:
                     description: |-
                       known endpoint. URL is taken as is, and should end with .well-known/openid-configuration.
                       Automatically configure source from OIDC well-known endpoint. URL is taken as is, and should end with `.well-known/openid-configuration`.
+                    type: string
+                  pkce:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `plain`
+                      - `S256`
+                      Defaults to `none`.
                     type: string
                   policyEngineMode:
                     description: |-
@@ -795,6 +820,11 @@ spec:
                       (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
                       Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -992,8 +1022,10 @@ spec:
                       - `okta`
                       - `patreon`
                       - `reddit`
+                      - `slack`
                       - `twitch`
                       - `twitter`
+                      - `wechat`
                     type: string
                   requestTokenUrl:
                     description: |-
@@ -1168,7 +1200,7 @@ spec:
                   oidcJwks:
                     description: |-
                       to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
-                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use jsonencode() to pass objects. Generated.
+                      Manually configure JWKS keys for use with machine-to-machine authentication. JSON format expected. Use `jsonencode()` to pass objects. Generated.
                     type: string
                   oidcJwksUrl:
                     description: |-
@@ -1179,6 +1211,15 @@ spec:
                     description: |-
                       known endpoint. URL is taken as is, and should end with .well-known/openid-configuration.
                       Automatically configure source from OIDC well-known endpoint. URL is taken as is, and should end with `.well-known/openid-configuration`.
+                    type: string
+                  pkce:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `none`
+                      - `plain`
+                      - `S256`
+                      Defaults to `none`.
                     type: string
                   policyEngineMode:
                     description: |-
@@ -1193,6 +1234,11 @@ spec:
                       (String) Manually configure OAuth2 URLs when oidc_well_known_url is not set.
                       Manually configure OAuth2 URLs when `oidc_well_known_url` is not set.
                     type: string
+                  promoted:
+                    description: |-
+                      (Boolean) Defaults to false.
+                      Defaults to `false`.
+                    type: boolean
                   propertyMappings:
                     description: (List of String)
                     items:
@@ -1220,8 +1266,10 @@ spec:
                       - `okta`
                       - `patreon`
                       - `reddit`
+                      - `slack`
                       - `twitch`
                       - `twitter`
+                      - `wechat`
                     type: string
                   requestTokenUrl:
                     description: |-

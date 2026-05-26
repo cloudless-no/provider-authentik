@@ -103,6 +103,9 @@ type IdentificationInitParameters struct {
 
 	// (List of String)
 	UserFields []*string `json:"userFields,omitempty" tf:"user_fields,omitempty"`
+
+	// (String)
+	WebauthnStage *string `json:"webauthnStage,omitempty" tf:"webauthn_stage,omitempty"`
 }
 
 type IdentificationObservation struct {
@@ -152,6 +155,9 @@ type IdentificationObservation struct {
 
 	// (List of String)
 	UserFields []*string `json:"userFields,omitempty" tf:"user_fields,omitempty"`
+
+	// (String)
+	WebauthnStage *string `json:"webauthnStage,omitempty" tf:"webauthn_stage,omitempty"`
 }
 
 type IdentificationParameters struct {
@@ -256,6 +262,10 @@ type IdentificationParameters struct {
 	// (List of String)
 	// +kubebuilder:validation:Optional
 	UserFields []*string `json:"userFields,omitempty" tf:"user_fields,omitempty"`
+
+	// (String)
+	// +kubebuilder:validation:Optional
+	WebauthnStage *string `json:"webauthnStage,omitempty" tf:"webauthn_stage,omitempty"`
 }
 
 // IdentificationSpec defines the desired state of Identification

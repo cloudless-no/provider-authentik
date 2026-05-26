@@ -58,6 +58,11 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.Certificate != nil {
+		in, out := &in.Certificate, &out.Certificate
+		*out = new(string)
+		**out = **in
+	}
 	if in.ClientNetworks != nil {
 		in, out := &in.ClientNetworks, &out.ClientNetworks
 		*out = new(string)
@@ -164,6 +169,11 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Certificate != nil {
+		in, out := &in.Certificate, &out.Certificate
+		*out = new(string)
+		**out = **in
+	}
 	if in.ClientNetworks != nil {
 		in, out := &in.ClientNetworks, &out.ClientNetworks
 		*out = new(string)
@@ -229,6 +239,11 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		in, out := &in.AuthorizationFlowSelector, &out.AuthorizationFlowSelector
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
+	}
+	if in.Certificate != nil {
+		in, out := &in.Certificate, &out.Certificate
+		*out = new(string)
+		**out = **in
 	}
 	if in.ClientNetworks != nil {
 		in, out := &in.ClientNetworks, &out.ClientNetworks

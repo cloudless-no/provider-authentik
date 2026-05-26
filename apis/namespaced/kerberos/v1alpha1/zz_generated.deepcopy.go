@@ -138,6 +138,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
+		**out = **in
+	}
 	if in.SyncPasswordSecretRef != nil {
 		in, out := &in.SyncPasswordSecretRef, &out.SyncPasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
@@ -290,6 +295,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
+		**out = **in
+	}
 	if in.SyncPrincipal != nil {
 		in, out := &in.SyncPrincipal, &out.SyncPrincipal
 		*out = new(string)
@@ -428,6 +438,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 	if in.SyncKeytabSecretRef != nil {
 		in, out := &in.SyncKeytabSecretRef, &out.SyncKeytabSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.SyncOutgoingTriggerMode != nil {
+		in, out := &in.SyncOutgoingTriggerMode, &out.SyncOutgoingTriggerMode
+		*out = new(string)
 		**out = **in
 	}
 	if in.SyncPasswordSecretRef != nil {

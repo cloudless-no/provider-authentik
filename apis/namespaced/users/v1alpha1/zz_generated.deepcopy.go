@@ -58,10 +58,16 @@ func (in *GroupInitParameters) DeepCopyInto(out *GroupInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Parent != nil {
-		in, out := &in.Parent, &out.Parent
-		*out = new(string)
-		**out = **in
+	if in.Parents != nil {
+		in, out := &in.Parents, &out.Parents
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
 	}
 	if in.Roles != nil {
 		in, out := &in.Roles, &out.Roles
@@ -164,10 +170,16 @@ func (in *GroupObservation) DeepCopyInto(out *GroupObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Parent != nil {
-		in, out := &in.Parent, &out.Parent
-		*out = new(string)
-		**out = **in
+	if in.Parents != nil {
+		in, out := &in.Parents, &out.Parents
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
 	}
 	if in.Roles != nil {
 		in, out := &in.Roles, &out.Roles
@@ -221,10 +233,16 @@ func (in *GroupParameters) DeepCopyInto(out *GroupParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Parent != nil {
-		in, out := &in.Parent, &out.Parent
-		*out = new(string)
-		**out = **in
+	if in.Parents != nil {
+		in, out := &in.Parents, &out.Parents
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
 	}
 	if in.Roles != nil {
 		in, out := &in.Roles, &out.Roles
@@ -664,6 +682,17 @@ func (in *UserInitParameters) DeepCopyInto(out *UserInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Roles != nil {
+		in, out := &in.Roles, &out.Roles
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
+	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -762,6 +791,17 @@ func (in *UserObservation) DeepCopyInto(out *UserObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Roles != nil {
+		in, out := &in.Roles, &out.Roles
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
+	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -839,6 +879,17 @@ func (in *UserParameters) DeepCopyInto(out *UserParameters) {
 		in, out := &in.Path, &out.Path
 		*out = new(string)
 		**out = **in
+	}
+	if in.Roles != nil {
+		in, out := &in.Roles, &out.Roles
+		*out = make([]*string, len(*in))
+		for i := range *in {
+			if (*in)[i] != nil {
+				in, out := &(*in)[i], &(*out)[i]
+				*out = new(string)
+				**out = **in
+			}
+		}
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type

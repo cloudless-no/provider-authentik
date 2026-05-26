@@ -16,7 +16,7 @@ import (
 
 type TransportInitParameters struct {
 
-	// (String) Defaults to authentik Notification: .
+	// (String) Defaults to authentik Notification:.
 	// Defaults to `authentik Notification:`.
 	EmailSubjectPrefix *string `json:"emailSubjectPrefix,omitempty" tf:"email_subject_prefix,omitempty"`
 
@@ -51,7 +51,7 @@ type TransportInitParameters struct {
 
 type TransportObservation struct {
 
-	// (String) Defaults to authentik Notification: .
+	// (String) Defaults to authentik Notification:.
 	// Defaults to `authentik Notification:`.
 	EmailSubjectPrefix *string `json:"emailSubjectPrefix,omitempty" tf:"email_subject_prefix,omitempty"`
 
@@ -89,7 +89,7 @@ type TransportObservation struct {
 
 type TransportParameters struct {
 
-	// (String) Defaults to authentik Notification: .
+	// (String) Defaults to authentik Notification:.
 	// Defaults to `authentik Notification:`.
 	// +kubebuilder:validation:Optional
 	EmailSubjectPrefix *string `json:"emailSubjectPrefix,omitempty" tf:"email_subject_prefix,omitempty"`

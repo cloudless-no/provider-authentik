@@ -129,6 +129,16 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		*out = new(v1.NamespacedSelector)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.SyncPageSize != nil {
+		in, out := &in.SyncPageSize, &out.SyncPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.SyncPageTimeout != nil {
+		in, out := &in.SyncPageTimeout, &out.SyncPageTimeout
+		*out = new(string)
+		**out = **in
+	}
 	if in.UserDeleteAction != nil {
 		in, out := &in.UserDeleteAction, &out.UserDeleteAction
 		*out = new(string)
@@ -248,6 +258,16 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 			}
 		}
 	}
+	if in.SyncPageSize != nil {
+		in, out := &in.SyncPageSize, &out.SyncPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.SyncPageTimeout != nil {
+		in, out := &in.SyncPageTimeout, &out.SyncPageTimeout
+		*out = new(string)
+		**out = **in
+	}
 	if in.UserDeleteAction != nil {
 		in, out := &in.UserDeleteAction, &out.UserDeleteAction
 		*out = new(string)
@@ -353,6 +373,16 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		in, out := &in.PropertyMappingsSelector, &out.PropertyMappingsSelector
 		*out = new(v1.NamespacedSelector)
 		(*in).DeepCopyInto(*out)
+	}
+	if in.SyncPageSize != nil {
+		in, out := &in.SyncPageSize, &out.SyncPageSize
+		*out = new(float64)
+		**out = **in
+	}
+	if in.SyncPageTimeout != nil {
+		in, out := &in.SyncPageTimeout, &out.SyncPageTimeout
+		*out = new(string)
+		**out = **in
 	}
 	if in.UserDeleteAction != nil {
 		in, out := &in.UserDeleteAction, &out.UserDeleteAction

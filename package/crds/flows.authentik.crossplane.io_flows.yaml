@@ -86,8 +86,8 @@ spec:
                     type: string
                   background:
                     description: |-
-                      (String) Optional URL to an image which will be used as the background during the flow.
-                      Optional URL to an image which will be used as the background during the flow.
+                      (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+                      Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
                     type: string
                   compatibilityMode:
                     description: |-
@@ -120,6 +120,8 @@ spec:
                       - `content_right`
                       - `sidebar_left`
                       - `sidebar_right`
+                      - `sidebar_left_frame_background`
+                      - `sidebar_right_frame_background`
                       Defaults to `stacked`.
                     type: string
                   name:
@@ -167,8 +169,8 @@ spec:
                     type: string
                   background:
                     description: |-
-                      (String) Optional URL to an image which will be used as the background during the flow.
-                      Optional URL to an image which will be used as the background during the flow.
+                      (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+                      Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
                     type: string
                   compatibilityMode:
                     description: |-
@@ -201,6 +203,8 @@ spec:
                       - `content_right`
                       - `sidebar_left`
                       - `sidebar_right`
+                      - `sidebar_left_frame_background`
+                      - `sidebar_right_frame_background`
                       Defaults to `stacked`.
                     type: string
                   name:
@@ -343,8 +347,8 @@ spec:
                     type: string
                   background:
                     description: |-
-                      (String) Optional URL to an image which will be used as the background during the flow.
-                      Optional URL to an image which will be used as the background during the flow.
+                      (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+                      Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
                     type: string
                   compatibilityMode:
                     description: |-
@@ -380,6 +384,8 @@ spec:
                       - `content_right`
                       - `sidebar_left`
                       - `sidebar_right`
+                      - `sidebar_left_frame_background`
+                      - `sidebar_right_frame_background`
                       Defaults to `stacked`.
                     type: string
                   name:

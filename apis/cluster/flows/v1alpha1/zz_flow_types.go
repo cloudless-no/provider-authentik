@@ -26,8 +26,8 @@ type FlowInitParameters struct {
 	// Defaults to `none`.
 	Authentication *string `json:"authentication,omitempty" tf:"authentication,omitempty"`
 
-	// (String) Optional URL to an image which will be used as the background during the flow.
-	// Optional URL to an image which will be used as the background during the flow.
+	// (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+	// Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
 	Background *string `json:"background,omitempty" tf:"background,omitempty"`
 
 	// (Boolean) Defaults to true.
@@ -56,6 +56,8 @@ type FlowInitParameters struct {
 	// - `content_right`
 	// - `sidebar_left`
 	// - `sidebar_right`
+	// - `sidebar_left_frame_background`
+	// - `sidebar_right_frame_background`
 	// Defaults to `stacked`.
 	Layout *string `json:"layout,omitempty" tf:"layout,omitempty"`
 
@@ -89,8 +91,8 @@ type FlowObservation struct {
 	// Defaults to `none`.
 	Authentication *string `json:"authentication,omitempty" tf:"authentication,omitempty"`
 
-	// (String) Optional URL to an image which will be used as the background during the flow.
-	// Optional URL to an image which will be used as the background during the flow.
+	// (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+	// Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
 	Background *string `json:"background,omitempty" tf:"background,omitempty"`
 
 	// (Boolean) Defaults to true.
@@ -122,6 +124,8 @@ type FlowObservation struct {
 	// - `content_right`
 	// - `sidebar_left`
 	// - `sidebar_right`
+	// - `sidebar_left_frame_background`
+	// - `sidebar_right_frame_background`
 	// Defaults to `stacked`.
 	Layout *string `json:"layout,omitempty" tf:"layout,omitempty"`
 
@@ -160,8 +164,8 @@ type FlowParameters struct {
 	// +kubebuilder:validation:Optional
 	Authentication *string `json:"authentication,omitempty" tf:"authentication,omitempty"`
 
-	// (String) Optional URL to an image which will be used as the background during the flow.
-	// Optional URL to an image which will be used as the background during the flow.
+	// (String) Optional URL to an image which will be used as the background during the flow. Defaults to /static/dist/assets/images/flow_background.jpg.
+	// Optional URL to an image which will be used as the background during the flow. Defaults to `/static/dist/assets/images/flow_background.jpg`.
 	// +kubebuilder:validation:Optional
 	Background *string `json:"background,omitempty" tf:"background,omitempty"`
 
@@ -194,6 +198,8 @@ type FlowParameters struct {
 	// - `content_right`
 	// - `sidebar_left`
 	// - `sidebar_right`
+	// - `sidebar_left_frame_background`
+	// - `sidebar_right_frame_background`
 	// Defaults to `stacked`.
 	// +kubebuilder:validation:Optional
 	Layout *string `json:"layout,omitempty" tf:"layout,omitempty"`

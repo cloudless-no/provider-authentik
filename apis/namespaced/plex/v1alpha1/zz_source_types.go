@@ -75,6 +75,10 @@ type SourceInitParameters struct {
 	// Defaults to `any`.
 	PolicyEngineMode *string `json:"policyEngineMode,omitempty" tf:"policy_engine_mode,omitempty"`
 
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
+
 	// (String)
 	Slug *string `json:"slug,omitempty" tf:"slug,omitempty"`
 
@@ -139,6 +143,10 @@ type SourceObservation struct {
 	// - `any`
 	// Defaults to `any`.
 	PolicyEngineMode *string `json:"policyEngineMode,omitempty" tf:"policy_engine_mode,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
 
 	// (String)
 	Slug *string `json:"slug,omitempty" tf:"slug,omitempty"`
@@ -232,6 +240,11 @@ type SourceParameters struct {
 	// Defaults to `any`.
 	// +kubebuilder:validation:Optional
 	PolicyEngineMode *string `json:"policyEngineMode,omitempty" tf:"policy_engine_mode,omitempty"`
+
+	// (Boolean) Defaults to false.
+	// Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	Promoted *bool `json:"promoted,omitempty" tf:"promoted,omitempty"`
 
 	// (String)
 	// +kubebuilder:validation:Optional

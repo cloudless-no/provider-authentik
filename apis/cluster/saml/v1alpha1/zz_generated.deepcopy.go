@@ -133,6 +133,11 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -176,6 +181,11 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.SignLogoutRequest != nil {
+		in, out := &in.SignLogoutRequest, &out.SignLogoutRequest
+		*out = new(bool)
+		**out = **in
+	}
 	if in.SignResponse != nil {
 		in, out := &in.SignResponse, &out.SignResponse
 		*out = new(bool)
@@ -188,6 +198,16 @@ func (in *ProviderInitParameters) DeepCopyInto(out *ProviderInitParameters) {
 	}
 	if in.SigningKp != nil {
 		in, out := &in.SigningKp, &out.SigningKp
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsBinding != nil {
+		in, out := &in.SlsBinding, &out.SlsBinding
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsURL != nil {
+		in, out := &in.SlsURL, &out.SlsURL
 		*out = new(string)
 		**out = **in
 	}
@@ -338,6 +358,11 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -369,6 +394,11 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.SignLogoutRequest != nil {
+		in, out := &in.SignLogoutRequest, &out.SignLogoutRequest
+		*out = new(bool)
+		**out = **in
+	}
 	if in.SignResponse != nil {
 		in, out := &in.SignResponse, &out.SignResponse
 		*out = new(bool)
@@ -381,6 +411,16 @@ func (in *ProviderObservation) DeepCopyInto(out *ProviderObservation) {
 	}
 	if in.SigningKp != nil {
 		in, out := &in.SigningKp, &out.SigningKp
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsBinding != nil {
+		in, out := &in.SlsBinding, &out.SlsBinding
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsURL != nil {
+		in, out := &in.SlsURL, &out.SlsURL
 		*out = new(string)
 		**out = **in
 	}
@@ -524,6 +564,11 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.LogoutMethod != nil {
+		in, out := &in.LogoutMethod, &out.LogoutMethod
+		*out = new(string)
+		**out = **in
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -567,6 +612,11 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.SignLogoutRequest != nil {
+		in, out := &in.SignLogoutRequest, &out.SignLogoutRequest
+		*out = new(bool)
+		**out = **in
+	}
 	if in.SignResponse != nil {
 		in, out := &in.SignResponse, &out.SignResponse
 		*out = new(bool)
@@ -579,6 +629,16 @@ func (in *ProviderParameters) DeepCopyInto(out *ProviderParameters) {
 	}
 	if in.SigningKp != nil {
 		in, out := &in.SigningKp, &out.SigningKp
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsBinding != nil {
+		in, out := &in.SlsBinding, &out.SlsBinding
+		*out = new(string)
+		**out = **in
+	}
+	if in.SlsURL != nil {
+		in, out := &in.SlsURL, &out.SlsURL
 		*out = new(string)
 		**out = **in
 	}
@@ -993,6 +1053,11 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertyMappings != nil {
 		in, out := &in.PropertyMappings, &out.PropertyMappings
 		*out = make([]*string, len(*in))
@@ -1047,6 +1112,16 @@ func (in *SourceInitParameters) DeepCopyInto(out *SourceInitParameters) {
 	if in.SignatureAlgorithm != nil {
 		in, out := &in.SignatureAlgorithm, &out.SignatureAlgorithm
 		*out = new(string)
+		**out = **in
+	}
+	if in.SignedAssertion != nil {
+		in, out := &in.SignedAssertion, &out.SignedAssertion
+		*out = new(bool)
+		**out = **in
+	}
+	if in.SignedResponse != nil {
+		in, out := &in.SignedResponse, &out.SignedResponse
+		*out = new(bool)
 		**out = **in
 	}
 	if in.SigningKp != nil {
@@ -1211,6 +1286,11 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertyMappings != nil {
 		in, out := &in.PropertyMappings, &out.PropertyMappings
 		*out = make([]*string, len(*in))
@@ -1241,6 +1321,16 @@ func (in *SourceObservation) DeepCopyInto(out *SourceObservation) {
 	if in.SignatureAlgorithm != nil {
 		in, out := &in.SignatureAlgorithm, &out.SignatureAlgorithm
 		*out = new(string)
+		**out = **in
+	}
+	if in.SignedAssertion != nil {
+		in, out := &in.SignedAssertion, &out.SignedAssertion
+		*out = new(bool)
+		**out = **in
+	}
+	if in.SignedResponse != nil {
+		in, out := &in.SignedResponse, &out.SignedResponse
+		*out = new(bool)
 		**out = **in
 	}
 	if in.SigningKp != nil {
@@ -1393,6 +1483,11 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 		*out = new(v1.Selector)
 		(*in).DeepCopyInto(*out)
 	}
+	if in.Promoted != nil {
+		in, out := &in.Promoted, &out.Promoted
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertyMappings != nil {
 		in, out := &in.PropertyMappings, &out.PropertyMappings
 		*out = make([]*string, len(*in))
@@ -1447,6 +1542,16 @@ func (in *SourceParameters) DeepCopyInto(out *SourceParameters) {
 	if in.SignatureAlgorithm != nil {
 		in, out := &in.SignatureAlgorithm, &out.SignatureAlgorithm
 		*out = new(string)
+		**out = **in
+	}
+	if in.SignedAssertion != nil {
+		in, out := &in.SignedAssertion, &out.SignedAssertion
+		*out = new(bool)
+		**out = **in
+	}
+	if in.SignedResponse != nil {
+		in, out := &in.SignedResponse, &out.SignedResponse
+		*out = new(bool)
 		**out = **in
 	}
 	if in.SigningKp != nil {

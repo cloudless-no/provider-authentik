@@ -74,7 +74,7 @@ spec:
                 properties:
                   emailSubjectPrefix:
                     description: |-
-                      (String) Defaults to authentik Notification: .
+                      (String) Defaults to authentik Notification:.
                       Defaults to `authentik Notification:`.
                     type: string
                   emailTemplate:
@@ -124,7 +124,7 @@ spec:
                 properties:
                   emailSubjectPrefix:
                     description: |-
-                      (String) Defaults to authentik Notification: .
+                      (String) Defaults to authentik Notification:.
                       Defaults to `authentik Notification:`.
                     type: string
                   emailTemplate:
@@ -261,7 +261,7 @@ spec:
                 properties:
                   emailSubjectPrefix:
                     description: |-
-                      (String) Defaults to authentik Notification: .
+                      (String) Defaults to authentik Notification:.
                       Defaults to `authentik Notification:`.
                     type: string
                   emailTemplate:

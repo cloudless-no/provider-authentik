@@ -141,6 +141,9 @@ spec:
                             type: string
                         type: object
                     type: object
+                  certificate:
+                    description: (String)
+                    type: string
                   clientNetworks:
                     description: |-
                       (String) Defaults to 0.0.0.0/0, ::/0.
@@ -436,6 +439,9 @@ spec:
                             type: string
                         type: object
                     type: object
+                  certificate:
+                    description: (String)
+                    type: string
                   clientNetworks:
                     description: |-
                       (String) Defaults to 0.0.0.0/0, ::/0.
@@ -709,6 +715,9 @@ spec:
               atProvider:
                 properties:
                   authorizationFlow:
+                    description: (String)
+                    type: string
+                  certificate:
                     description: (String)
                     type: string
                   clientNetworks:

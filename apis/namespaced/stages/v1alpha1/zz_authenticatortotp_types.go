@@ -35,7 +35,8 @@ type AuthenticatorTotpInitParameters struct {
 	// Defaults to `6`.
 	Digits *string `json:"digits,omitempty" tf:"digits,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (String)
@@ -54,7 +55,8 @@ type AuthenticatorTotpObservation struct {
 	// Defaults to `6`.
 	Digits *string `json:"digits,omitempty" tf:"digits,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (String) The ID of this resource.
@@ -87,7 +89,8 @@ type AuthenticatorTotpParameters struct {
 	// +kubebuilder:validation:Optional
 	Digits *string `json:"digits,omitempty" tf:"digits,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

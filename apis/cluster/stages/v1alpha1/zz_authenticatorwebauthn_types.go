@@ -36,7 +36,8 @@ type AuthenticatorWebauthnInitParameters struct {
 	// (List of String)
 	DeviceTypeRestrictions []*string `json:"deviceTypeRestrictions,omitempty" tf:"device_type_restrictions,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (Number)
@@ -76,7 +77,8 @@ type AuthenticatorWebauthnObservation struct {
 	// (List of String)
 	DeviceTypeRestrictions []*string `json:"deviceTypeRestrictions,omitempty" tf:"device_type_restrictions,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 
 	// (String) The ID of this resource.
@@ -131,7 +133,8 @@ type AuthenticatorWebauthnParameters struct {
 	// +kubebuilder:validation:Optional
 	DeviceTypeRestrictions []*string `json:"deviceTypeRestrictions,omitempty" tf:"device_type_restrictions,omitempty"`
 
-	// (String)
+	// (String) Defaults to “.
+	// Defaults to “.
 	// +kubebuilder:validation:Optional
 	FriendlyName *string `json:"friendlyName,omitempty" tf:"friendly_name,omitempty"`
 

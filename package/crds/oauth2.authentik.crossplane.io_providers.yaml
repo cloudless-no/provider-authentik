@@ -243,9 +243,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  backchannelLogoutUri:
-                    description: (String)
-                    type: string
                   clientId:
                     description: (String)
                     type: string
@@ -468,6 +465,17 @@ spec:
                     items:
                       type: string
                     type: array
+                  logoutMethod:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `backchannel`
+                      - `frontchannel`
+                      Defaults to `backchannel`.
+                    type: string
+                  logoutUri:
+                    description: (String)
+                    type: string
                   name:
                     description: (String)
                     type: string
@@ -555,6 +563,11 @@ spec:
                             type: string
                         type: object
                     type: object
+                  refreshTokenThreshold:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+                    type: string
                   refreshTokenValidity:
                     description: |-
                       (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
@@ -836,9 +849,6 @@ spec:
                             type: string
                         type: object
                     type: object
-                  backchannelLogoutUri:
-                    description: (String)
-                    type: string
                   clientId:
                     description: (String)
                     type: string
@@ -1061,6 +1071,17 @@ spec:
                     items:
                       type: string
                     type: array
+                  logoutMethod:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `backchannel`
+                      - `frontchannel`
+                      Defaults to `backchannel`.
+                    type: string
+                  logoutUri:
+                    description: (String)
+                    type: string
                   name:
                     description: (String)
                     type: string
@@ -1148,6 +1169,11 @@ spec:
                             type: string
                         type: object
                     type: object
+                  refreshTokenThreshold:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+                    type: string
                   refreshTokenValidity:
                     description: |-
                       (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
@@ -1368,9 +1394,6 @@ spec:
                   authorizationFlow:
                     description: (String)
                     type: string
-                  backchannelLogoutUri:
-                    description: (String)
-                    type: string
                   clientId:
                     description: (String)
                     type: string
@@ -1425,6 +1448,17 @@ spec:
                     items:
                       type: string
                     type: array
+                  logoutMethod:
+                    description: |-
+                      (String) Allowed values:
+                      Allowed values:
+                      - `backchannel`
+                      - `frontchannel`
+                      Defaults to `backchannel`.
+                    type: string
+                  logoutUri:
+                    description: (String)
+                    type: string
                   name:
                     description: (String)
                     type: string
@@ -1433,6 +1467,11 @@ spec:
                     items:
                       type: string
                     type: array
+                  refreshTokenThreshold:
+                    description: |-
+                      (String) Format: hours=1;minutes=2;seconds=3. Defaults to seconds=0.
+                      Format: hours=1;minutes=2;seconds=3. Defaults to `seconds=0`.
+                    type: string
                   refreshTokenValidity:
                     description: |-
                       (String) Format: hours=1;minutes=2;seconds=3. Defaults to days=30.
