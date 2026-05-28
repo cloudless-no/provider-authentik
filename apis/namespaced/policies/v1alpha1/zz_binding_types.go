@@ -51,6 +51,7 @@ type BindingInitParameters struct {
 	// (String) ID of the object this binding should apply to
 	// ID of the object this binding should apply to
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/applications/v1alpha1.Application
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/v2/pkg/resource.ExtractParamPath("uuid",true)
 	Target *string `json:"target,omitempty" tf:"target,omitempty"`
 
 	// Reference to a Application in applications to populate target.
@@ -154,6 +155,7 @@ type BindingParameters struct {
 	// (String) ID of the object this binding should apply to
 	// ID of the object this binding should apply to
 	// +crossplane:generate:reference:type=github.com/unbounded-tech/provider-authentik/apis/namespaced/applications/v1alpha1.Application
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/v2/pkg/resource.ExtractParamPath("uuid",true)
 	// +kubebuilder:validation:Optional
 	Target *string `json:"target,omitempty" tf:"target,omitempty"`
 

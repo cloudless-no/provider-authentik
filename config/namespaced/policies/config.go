@@ -13,6 +13,9 @@ func Configure(p *config.Provider) {
 		// Examples show focusing on applications
 		r.References["target"] = config.Reference{
 			TerraformName: "authentik_application",
+			// Authentik's policy binding API requires the application UUID, not the
+			// slug (which is used as the Terraform resource ID / external-name).
+			Extractor: `github.com/crossplane/upjet/v2/pkg/resource.ExtractParamPath("uuid",true)`,
 		}
 		r.References["group"] = config.Reference{
 			TerraformName: "authentik_group",

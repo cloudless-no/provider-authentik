@@ -10,6 +10,7 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/v2/pkg/reference"
 	errors "github.com/pkg/errors"
+	resource "github.com/crossplane/upjet/v2/pkg/resource"
 	v1alpha11 "github.com/unbounded-tech/provider-authentik/apis/cluster/applications/v1alpha1"
 	v1alpha1 "github.com/unbounded-tech/provider-authentik/apis/cluster/users/v1alpha1"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
@@ -41,7 +42,7 @@ func (mg *Binding) ResolveReferences(ctx context.Context, c client.Reader) error
 
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.Target),
-		Extract:      reference.ExternalName(),
+		Extract:      resource.ExtractParamPath("uuid", true),
 		Namespace:    mg.GetNamespace(),
 		Reference:    mg.Spec.ForProvider.TargetRef,
 		Selector:     mg.Spec.ForProvider.TargetSelector,
@@ -75,7 +76,7 @@ func (mg *Binding) ResolveReferences(ctx context.Context, c client.Reader) error
 
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.InitProvider.Target),
-		Extract:      reference.ExternalName(),
+		Extract:      resource.ExtractParamPath("uuid", true),
 		Namespace:    mg.GetNamespace(),
 		Reference:    mg.Spec.InitProvider.TargetRef,
 		Selector:     mg.Spec.InitProvider.TargetSelector,
